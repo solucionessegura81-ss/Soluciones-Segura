@@ -57,3 +57,16 @@ footer {
   text-decoration: none;
   z-index: 9999;
 }
+
+.link-facebook {
+  color: #ffffff;        
+  text-decoration: none; 
+}
+
+.link-facebook:visited {
+  color: #ffffff;        
+}
+
+.link-facebook:hover {
+  color: #ffffff;    
+}
