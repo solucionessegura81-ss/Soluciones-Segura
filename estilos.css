@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f1f3f5;
+  background-color: #0a4ea3;
+  color: white;
 }
 
 .header {
@@ -51,4 +52,5 @@ footer {
   padding: 15px;
   border-radius: 50%;
   text-decoration: none;
+
 }
