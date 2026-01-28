@@ -5,7 +5,15 @@ body {
 }
 
 .header {
-  background: #0d6efd;
+  background-image: url("../IMG/fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
   color: white;
   text-align: center;
   padding: 40px;
@@ -101,5 +109,6 @@ footer {
   border-radius: 6px;
   font-weight: bold;
 }
+
 
 
