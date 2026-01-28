@@ -91,4 +91,15 @@ footer {
   text-decoration: none;
   border-radius: 5px;
 }
+.volver {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #0a3cff;
+  color: #ffffff;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
 
