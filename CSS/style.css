@@ -70,3 +70,25 @@ footer {
 .link-facebook:hover {
   color: #ffffff;    
 }
+.detalle-servicio {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  margin-top: 40px;
+}
+
+.detalle-servicio img {
+  max-width: 100%;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ffffff;
+  background-color: #0a3cff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
