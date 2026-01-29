@@ -38,14 +38,28 @@ body {
 .servicios {
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap; /* permite que se bajen a otra fila si no caben */
+  justify-content: center; /* centra las cards */
+  gap: 20px; /* espacio entre cards */
 }
+
 
 .card {
   background: white;
   padding: 20px;
-  margin: 10px;
   border-radius: 10px;
+  flex: 1 1 200px; /* ancho mínimo 200px, crece si hay espacio */
+  max-width: 300px; /* no se agranda demasiado */
+  box-sizing: border-box;
+  cursor: pointer; /* indica que se puede clicar */
+  transition: transform 0.2s; /* animación suave al pasar el mouse */
 }
+
+.card:hover {
+  transform: scale(1.05); /* efecto hover opcional */
+}
+
 
 .contacto {
   background: #343a40;
@@ -170,6 +184,13 @@ footer {
 .detalle-servicio img {
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex: 1 1 90%; /* ocupa casi todo el ancho en celular */
+    margin: 10px auto; /* centrado con espacio */
+  }
 }
 
 
