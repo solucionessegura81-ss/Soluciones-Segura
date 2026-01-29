@@ -31,7 +31,9 @@ body {
 }
 
 .header img {
-  max-width: 170px; /* 🔧 LOGO como antes */
+  width: 260px;      /* tamaño real del logo */
+  max-width: 100%;
+  height: auto;
   margin-bottom: 15px;
 }
 
@@ -219,9 +221,10 @@ footer {
   }
 
   .header img {
-    max-width: 140px;
+    max-width: 200px;
   }
 }
+
 
 
 
