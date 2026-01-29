@@ -225,31 +225,38 @@ footer {
   }
 }
 
-/* ===== TITULO NUESTROS SERVICIOS (FORZADO) ===== */
-.servicios h2 {
-  flex-basis: 100%;
+/* ===== TITULO SERVICIOS PRO ===== */
+.titulo-servicios {
   width: 100%;
-  text-align: center !important;
-  font-size: 2.4rem !important;
-  font-weight: 800;
-  color: #000 !important;
-  margin-bottom: 45px;
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 50px;
   position: relative;
 }
 
-/* LINEA DECORATIVA */
-.servicios h2::after {
+.titulo-servicios::after {
   content: "";
   display: block;
-  width: 120px;
+  width: 140px;
   height: 5px;
-  background-color: #25D366;
-  margin: 14px auto 0;
-  border-radius: 10px;
+  background: linear-gradient(90deg, #25D366, #0a3cff);
+  margin: 16px auto 0;
+  border-radius: 20px;
+}
+
+/* CONTENEDOR DE CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 
   
+
 
 
 
