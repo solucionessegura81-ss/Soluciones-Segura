@@ -105,19 +105,19 @@ body {
 }
 
 .card.mantenimiento::before {
-  background-image: url("../IMG/mantenimiento.jpg");
+  background-image: url("../IMG/mant.png");
 }
 
 .card.reemplazo::before {
-  background-image: url("../IMG/reemplazo.jpg");
+  background-image: url("../IMG/reemp.png");
 }
 
 .card.software::before {
-  background-image: url("../IMG/software.jpg");
+  background-image: url("../IMG/soft.png");
 }
 
 .card.formateo::before {
-  background-image: url("../IMG/formateo.jpg");
+  background-image: url("../IMG/format.png");
 }
 
 /* ===== CONTACTO ===== */
@@ -240,6 +240,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
