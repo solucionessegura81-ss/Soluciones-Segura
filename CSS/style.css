@@ -1,3 +1,7 @@
+html {
+  background: red !important;
+}
+
 /* ===== ESTILOS GENERALES ===== */
 body {
   margin: 0;
@@ -260,6 +264,7 @@ footer {
 
 
   
+
 
 
 
