@@ -31,10 +31,10 @@ body {
 }
 
 .header img {
-  width: 320px;      /* tamaño real del logo */
-  max-width: 90%;
+  width: 420px;      /* tamaño real del logo */
+  max-width: 95%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .header h1 {
@@ -221,9 +221,10 @@ footer {
   }
 
   .header img {
-    max-width: 240px;
+    max-width: 300px; /* Logo Celular 
   }
 }
+
 
 
 
