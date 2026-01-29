@@ -5,7 +5,7 @@ body {
 }
 
 .header {
-  background-image: url("IMG/fondo.png");
+  background-image: url("../IMG/fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -109,6 +109,7 @@ footer {
   border-radius: 6px;
   font-weight: bold;
 }
+
 
 
 
