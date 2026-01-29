@@ -225,28 +225,31 @@ footer {
   }
 }
 
-
-  /* Linea Nuestros Servicios */
-.servicios > h2 span {
-  color: #25D366;
+/* ===== TITULO NUESTROS SERVICIOS (FORZADO) ===== */
+.servicios h2 {
+  flex-basis: 100%;
   width: 100%;
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-  color: #212529;
+  text-align: center !important;
+  font-size: 2.4rem !important;
+  font-weight: 800;
+  color: #000 !important;
+  margin-bottom: 45px;
   position: relative;
 }
 
-.servicios > h2::after {
+/* LINEA DECORATIVA */
+.servicios h2::after {
   content: "";
   display: block;
-  width: 100px;
-  height: 4px;
-  background: #25D366; /* verde profesional */
-  margin: 12px auto 0;
-  border-radius: 6px;
+  width: 120px;
+  height: 5px;
+  background-color: #25D366;
+  margin: 14px auto 0;
+  border-radius: 10px;
 }
 
+
+  
 
 
 
