@@ -89,7 +89,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
-  opacity: 0.3; /* oscurece la imagen para que el texto se lea */
+  opacity: 0.1; /* oscurece la imagen para que el texto se lea */
   z-index: 0;
 }
 
@@ -254,6 +254,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
