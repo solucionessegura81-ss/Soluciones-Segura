@@ -120,6 +120,20 @@ body {
   background-image: url("../IMG/format.png");
 }
 
+.card-text {
+  position: relative;
+  z-index: 1;       /* siempre por encima del overlay */
+  color: white;     /* texto blanco */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  display: block;
+}
+
+.card-text {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
 /* ===== CONTACTO ===== */
 .contacto {
   background: #343a40;
@@ -240,6 +254,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
