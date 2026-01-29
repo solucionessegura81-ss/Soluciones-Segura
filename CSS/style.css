@@ -225,26 +225,10 @@ footer {
   }
 }
 
-    /* Texto Nuestros Servicios */
-.servicios h2 {
-  position: relative;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #212529;
-}
-
-.servicios h2::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: #25D366; /* verde profesional */
-  margin: 10px auto 0;
-  border-radius: 5px;
-}
 
   /* Linea Nuestros Servicios */
-.servicios > h2 {
+.servicios > h2 span {
+  color: #25D366;
   width: 100%;
   text-align: center;
   font-size: 2.2rem;
@@ -262,6 +246,7 @@ footer {
   margin: 12px auto 0;
   border-radius: 6px;
 }
+
 
 
 
