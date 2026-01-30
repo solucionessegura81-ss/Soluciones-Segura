@@ -338,8 +338,42 @@ footer {
   }
 }
 
+/* ===== ANIMACIÓN ICONOS SERVICIOS ===== */
+.icono-servicio {
+  animation: aparecerIcono 0.9s ease-out forwards,
+             pulsoSuave 3.5s ease-in-out infinite;
+}
+
+/* Aparece suavemente */
+@keyframes aparecerIcono {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Pulso muy sutil */
+@keyframes pulsoSuave {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* Hover elegante */
+.icono-servicio:hover {
+  transform: scale(1.12);
+  transition: transform 0.25s ease;
+}
 
   
+
 
 
 
