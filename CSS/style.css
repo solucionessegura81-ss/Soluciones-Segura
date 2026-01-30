@@ -181,6 +181,13 @@ body {
   text-decoration: none;
 }
 
+.link-facebook:visited,
+.link-facebook:hover,
+.link-facebook:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: #212529;
@@ -446,6 +453,7 @@ footer {
 .contacto-item i {
   font-size: 1.4rem;
 }
+
 
 
 
