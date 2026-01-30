@@ -372,7 +372,58 @@ footer {
   transition: transform 0.25s ease;
 }
 
-  
+ /* ===== CONTACTO MEJORADO ===== */
+.contacto h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 12px 0;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contacto-item i {
+  font-size: 1.6rem;
+  color: #25D366; /* WhatsApp por defecto */
+}
+
+/* Facebook azul */
+.link-facebook i {
+  color: #1877f2;
+}
+
+/* Hover sutil profesional */
+.contacto-item:hover {
+  opacity: 0.85;
+}
+
+/* 📱 MÓVIL */
+@media (max-width: 768px) {
+  .contacto h2 {
+    font-size: 1.7rem;
+  }
+
+  .contacto-item {
+    font-size: 1.05rem;
+  }
+
+  .contacto-item i {
+    font-size: 1.4rem;
+  }
+}
+ 
+
 
 
 
