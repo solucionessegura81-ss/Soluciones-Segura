@@ -323,9 +323,24 @@ footer {
   transform: translateY(-2px);
 }
 
+/* ===== ICONOS SERVICIOS ===== */
+.icono-servicio {
+  font-size: 5.5rem;   /* 🔥 tamaño del icono */
+  color: #1f3c88;      /* azul Soluciones Segura */
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .icono-servicio {
+    font-size: 4.5rem;
+  }
+}
 
 
   
+
 
 
 
