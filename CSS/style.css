@@ -262,9 +262,9 @@ footer {
   max-width: 900px;
   margin: 60px auto;
   padding: 50px 30px;
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  background-color: #f1f3f5; /* gris limpio, profesional */
   border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.10);
   text-align: center;
 }
 
@@ -272,7 +272,7 @@ footer {
 .detalle-servicio h1 {
   font-size: 2.6rem;
   font-weight: 800;
-  color: #000;
+  color: #0a1f44; /* azul oscuro corporativo */
   margin-bottom: 25px;
   position: relative;
 }
@@ -283,7 +283,7 @@ footer {
   display: block;
   width: 90px;
   height: 5px;
-  background-color: #25D366; /* verde confianza */
+  background-color: #1f3c88; /* azul Soluciones Segura */
   margin: 16px auto 0;
   border-radius: 10px;
 }
@@ -292,7 +292,7 @@ footer {
 .detalle-servicio p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #333;
+  color: #2e2e2e;
   max-width: 750px;
   margin: 0 auto 35px;
 }
@@ -309,9 +309,9 @@ footer {
 /* BOTON VOLVER */
 .detalle-servicio .volver {
   display: inline-block;
-  background-color: #d62828;
-  color: #fff;
-  padding: 14px 28px;
+  background-color: #0a1f44; /* azul oscuro */
+  color: #ffffff;
+  padding: 14px 30px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 700;
@@ -319,12 +319,14 @@ footer {
 }
 
 .detalle-servicio .volver:hover {
-  background-color: #a61d1d;
+  background-color: #1f3c88;
   transform: translateY(-2px);
 }
 
 
+
   
+
 
 
 
