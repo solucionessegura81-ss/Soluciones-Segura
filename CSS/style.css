@@ -188,11 +188,6 @@ body {
   text-decoration: none;
 }
 
-/* Icono WhatsApp verde (solo el icono) */
-.contacto .fa-whatsapp {
-  color: #25D366; /* verde WhatsApp oficial */
-}
-
 /* ===== FOOTER ===== */
 footer {
   background: #212529;
@@ -217,6 +212,11 @@ footer {
   font-size: 32px;
   text-decoration: none;
   z-index: 9999;
+}
+
+/* Icono WhatsApp verde (solo el icono en contacto) */
+.contacto .fa-whatsapp {
+  color: #25D366; /* verde WhatsApp oficial */
 }
 
 /* ===== RESPONSIVO ===== */
@@ -458,6 +458,7 @@ footer {
 .contacto-item i {
   font-size: 1.4rem;
 }
+
 
 
 
