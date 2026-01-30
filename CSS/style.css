@@ -254,9 +254,78 @@ footer {
   gap: 20px;
 }
 
+/* ============================= */
+/* DETALLE DE SERVICIOS (PAGINAS INTERNAS) */
+/* ============================= */
+
+.detalle-servicio {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 50px 30px;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* TITULO PRINCIPAL */
+.detalle-servicio h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* LINEA DECORATIVA DEL TITULO */
+.detalle-servicio h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 5px;
+  background-color: #25D366; /* verde confianza */
+  margin: 16px auto 0;
+  border-radius: 10px;
+}
+
+/* TEXTO */
+.detalle-servicio p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+
+/* IMAGEN */
+.detalle-servicio img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  margin-bottom: 35px;
+}
+
+/* BOTON VOLVER */
+.detalle-servicio .volver {
+  display: inline-block;
+  background-color: #d62828;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.detalle-servicio .volver:hover {
+  background-color: #a61d1d;
+  transform: translateY(-2px);
+}
 
 
   
+
 
 
 
