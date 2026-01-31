@@ -37,14 +37,6 @@ body {
   margin-bottom: 25px;
 }
 
-/* 
-
-.header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-}
-
 .header p {
   max-width: 800px;
   margin: 10px auto;
@@ -464,27 +456,26 @@ footer {
 /* ===== H1 HEADER: Soporte Técnico Informático ===== */
 .header h1 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 800; /* más gruesa */
+  font-weight: 900;
   letter-spacing: 1px;
 
-  font-size: 2.9rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   text-align: center;
 
-  background: linear-gradient(90deg, #ffffff, #d9d9d9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1f3c88; /* azul Soluciones Segura */
 
-  -webkit-text-stroke: 1px #2f2f2f;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.35);
+  text-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 768px) {
   .header h1 {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     letter-spacing: 0.5px;
   }
 }
+
 
 
 
