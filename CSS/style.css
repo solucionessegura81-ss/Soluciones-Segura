@@ -488,6 +488,87 @@ footer {
   margin-bottom: 25px;
 }
 
+/* ===== NUEVA SECCIÓN: UBICACIÓN ===== */
+.ubicacion {
+  background: #2f3a46; /* gris azulado elegante (combina con contacto y footer) */
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+}
+
+.ubicacion h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.ubicacion-direccion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 10px auto 0;
+  max-width: 950px;
+  padding: 0 10px;
+}
+
+.ubicacion-direccion i {
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.separador-ubicacion {
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #25D366, #0a3cff);
+  margin: 18px auto;
+  border-radius: 20px;
+}
+
+.ubicacion-waze {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #1ea7fd; /* azul Waze */
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 700;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ubicacion-waze i {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.ubicacion-waze:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* Responsive: Ubicación */
+@media (max-width: 768px) {
+  .ubicacion h2 {
+    font-size: 1.7rem;
+  }
+
+  .ubicacion-direccion {
+    font-size: 1.02rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+
 
 
 
