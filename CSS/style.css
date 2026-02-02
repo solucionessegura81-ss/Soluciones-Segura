@@ -129,15 +129,15 @@ body {
 }
 
 .card.virus::before {
-  background-image: url("../IMG/virus.png");
+  background-image: url("../IMG/vir.png");
 }
 
 .card.respaldo::before {
-  background-image: url("../IMG/respaldo.png");
+  background-image: url("../IMG/respald.png");
 }
 
 .card.nuevo::before {
-  background-image: url("../IMG/nuevo.png");
+  background-image: url("../IMG/new.png");
 }
 
 /* ===== DETALLE DE SERVICIO ===== */
@@ -676,6 +676,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 
 
