@@ -128,6 +128,18 @@ body {
   background-image: url("../IMG/format.png");
 }
 
+.card.virus::before {
+  background-image: url("../IMG/virus.png");
+}
+
+.card.respaldo::before {
+  background-image: url("../IMG/respaldo.png");
+}
+
+.card.nuevo::before {
+  background-image: url("../IMG/nuevo.png");
+}
+
 /* ===== DETALLE DE SERVICIO ===== */
 .detalle-servicio {
   padding: 40px 20px;
@@ -664,6 +676,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 
 
