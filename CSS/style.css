@@ -651,6 +651,14 @@ img {
   }
 }
 
+/* ===== PERF PRO: carga visual estable de imágenes (sin cambiar diseño) ===== */
+img {
+  display: block;       /* evita pequeños espacios raros debajo de imágenes */
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 
 
