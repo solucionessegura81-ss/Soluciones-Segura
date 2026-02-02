@@ -568,6 +568,90 @@ footer {
   }
 }
 
+/* ===================================================== */
+/* MICRO-MEJORAS PRO (NO ROMPEN DISEÑO) */
+/* Pegar al FINAL del style.css */
+/* ===================================================== */
+
+/* 1) Mejor lectura y renderizado (no cambia tamaños) */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif; /* consistencia con tu marca */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2) Scroll suave (no afecta diseño) */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* 3) Selección de texto elegante (detalle pro) */
+::selection {
+  background: rgba(31, 60, 136, 0.35);
+}
+
+/* 4) Links y botones: transiciones suaves (sin cambiar colores base) */
+a, .card, .volver, .ubicacion-waze, .contacto-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+/* 5) Accesibilidad: enfoque visible solo con teclado (no cambia estética normal) */
+a:focus-visible,
+button:focus-visible,
+.card:focus-visible,
+.volver:focus-visible,
+.whatsapp:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, 0.75); /* verde WhatsApp */
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* 6) Mejor sensación al tocar en móvil (no cambia el look) */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 7) Cards: clic/touch se siente “premium” sin mover layout */
+.card:active {
+  transform: scale(0.98);
+}
+
+/* 8) Botón Volver: hover más fino sin cambiar color */
+.volver:hover {
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* 9) Botón WhatsApp flotante: un toque pro al pasar el mouse */
+.whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* 10) Mejor consistencia de espaciados en títulos de secciones (SIN mover el diseño de forma notable) */
+.titulo-servicios {
+  margin-top: 0; /* evita “aire” extra arriba si aparece */
+}
+
+/* 11) Evitar que imágenes se “estiren” en pantallas raras (sin cambiar tamaños actuales) */
+img {
+  height: auto;
+}
+
+/* 12) Respeto a usuarios con “reducir movimiento” (no cambia para la mayoría) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
 
 
 
