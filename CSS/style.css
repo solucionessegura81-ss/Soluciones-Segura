@@ -1040,43 +1040,11 @@ img {
   box-shadow: 0 12px 26px rgba(0,0,0,0.25);
 }
 
+/* ===== SOMBRA SUAVE AZUL PARA BOTÓN FACEBOOK (QUIÉNES SOMOS) ===== */
+.btn-facebook {
+  box-shadow: 0 8px 18px rgba(24, 119, 242, 0.35); /* azul Facebook suave */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.btn-facebook:hover {
+  box-shadow: 0 12px 26px rgba(24, 119, 242, 0.5); /* un poco más fuerte al pasar el mouse */
+}
