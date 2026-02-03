@@ -31,7 +31,7 @@ body {
 }
 
 .header img {
-  width: 680px;      /* tamaño real del logo */
+  width: 560px;      /* tamaño real del logo */
   max-width: 95%;
   height: auto;
   margin-bottom: 25px;
@@ -953,6 +953,7 @@ img {
     font-size: 1.02rem;
   }
 }
+
 
 
 
