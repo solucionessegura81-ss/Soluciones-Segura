@@ -972,6 +972,49 @@ img {
     );
 }
 
+/* ===== EFECTO LUZ EN FONDO (SOLO HEADER) ===== */
+/* No toca nada más del sitio */
+
+.header {
+  overflow: hidden; /* recorta el efecto dentro del header */
+}
+
+/* capa de destellos */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* Destellos suaves */
+  background:
+    radial-gradient(circle at 18% 30%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 82% 70%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%),
+    linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0));
+
+  /* Fuerza del efecto */
+  opacity: 0.55;
+
+  /* Mezcla con el fondo */
+  mix-blend-mode: screen;
+
+  /* Debe ir encima de la imagen pero debajo del texto */
+  z-index: 1;
+  pointer-events: none;
+
+  animation: headerGlow 6s ease-in-out infinite;
+}
+
+/* Mantiene el texto encima */
+.header * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes headerGlow {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.70; }
+}
+
 
 
 
