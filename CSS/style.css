@@ -954,38 +954,59 @@ img {
   }
 }
 
-/* DESTELLO SOLAR (CENTRO -> EXPANDE) */
-.header { position: relative; overflow: hidden; }
+/* ===== EFECTO REFLEJO (SHINE) EN HEADER: 1 SOLA VEZ ===== */
+.header{
+  position: relative;
+  overflow: hidden; /* recorta el brillo dentro del header */
+}
 
+/* Brillo que cruza de arriba-izq -> abajo-der */
 .header::after{
   content:"";
   position:absolute;
-  left:50%; top:50%;
-  width:18vmax; height:18vmax;
-  transform:translate(-50%,-50%) scale(0.4);
-  border-radius:50%;
-  background: radial-gradient(circle,
-    rgba(255,255,255,1) 0%,
-    rgba(255,255,255,0.85) 10%,
-    rgba(255,255,255,0.35) 25%,
-    rgba(255,255,255,0) 60%
-  );
-  opacity:0;
+  inset:-40%; /* más grande para que cubra todo al pasar */
+  z-index: 2; /* arriba del overlay oscuro */
   pointer-events:none;
-  z-index:1;
-  mix-blend-mode: screen; /* hace que se vea como luz real */
-  animation:destelloSolar 5s ease-in-out infinite;
+
+  /* Banda brillante inclinada */
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0) 42%,
+    rgba(255,255,255,0.95) 50%,
+    rgba(255,255,255,0) 58%
+  );
+
+  /* Hace que se vea como luz real, no como neblina */
+  mix-blend-mode: screen;
+
+  /* Empieza fuera del header */
+  transform: translate(-35%, -35%);
+  opacity: 0;
+
+  /* SOLO UNA VEZ */
+  animation: shineSweep 1.25s ease-out 1;
+  animation-fill-mode: forwards;
 }
 
-.header *{ position:relative; z-index:2; }
-
-@keyframes destelloSolar{
-  0%,60%{ opacity:0; transform:translate(-50%,-50%) scale(0.35); }
-  70%{ opacity:1; transform:translate(-50%,-50%) scale(1.25); }
-  85%{ opacity:0.35; transform:translate(-50%,-50%) scale(1.8); }
-  100%{ opacity:0; transform:translate(-50%,-50%) scale(2.1); }
+/* Asegura que texto y logo queden arriba del brillo */
+.header *{
+  position: relative;
+  z-index: 3;
 }
 
+@keyframes shineSweep{
+  0%{
+    transform: translate(-35%, -35%);
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  100%{
+    transform: translate(35%, 35%);
+    opacity: 0;
+  }
+}
 
 
 
