@@ -140,6 +140,10 @@ body {
   background-image: url("../IMG/new.png");
 }
 
+.card.hardware::before {
+  background-image: url("../IMG/hardw.png");
+}
+
 /* ===== DETALLE DE SERVICIO ===== */
 .detalle-servicio {
   padding: 40px 20px;
@@ -676,6 +680,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 
 
