@@ -955,43 +955,42 @@ img {
 }
 
 /* ============================================= */
-/* DESTELLO CENTRAL EXPANDIBLE – HEADER (PRO) */
+/* FLASH CENTRAL + BANDA DE LUZ (LENS FLARE) */
 /* ============================================= */
 
 .header { position: relative; overflow: hidden; }
 
-/* Destello radial */
 .header::after {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 25vmax;
-  height: 25vmax;
-  transform: translate(-50%, -50%) scale(0.6);
-
-  background: radial-gradient(circle,
-    rgba(255,255,255,0.95) 0%,
-    rgba(255,255,255,0.35) 22%,
-    rgba(255,255,255,0.0) 60%
-  );
+  inset: -30%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(255,255,255,0.95) 0%,
+      rgba(255,255,255,0.25) 28%,
+      rgba(255,255,255,0) 62%
+    ),
+    linear-gradient(115deg,
+      rgba(255,255,255,0) 40%,
+      rgba(255,255,255,0.35) 50%,
+      rgba(255,255,255,0) 60%
+    );
 
   opacity: 0;
-  filter: blur(2px);
+  filter: blur(1px);
   pointer-events: none;
   z-index: 1;
 
-  animation: flashCentro 5.5s ease-in-out infinite;
+  animation: flareCentro 6s ease-in-out infinite;
 }
 
-/* Mantiene texto/logo arriba */
 .header * { position: relative; z-index: 2; }
 
-@keyframes flashCentro {
-  0%, 55% { opacity: 0; transform: translate(-50%, -50%) scale(0.55); }
-  65%     { opacity: 0.95; transform: translate(-50%, -50%) scale(1.15); }
-  78%     { opacity: 0.55; transform: translate(-50%, -50%) scale(1.55); }
-  100%    { opacity: 0; transform: translate(-50%, -50%) scale(1.9); }
+@keyframes flareCentro {
+  0%, 55% { opacity: 0; transform: scale(0.9); }
+  65%     { opacity: 0.95; transform: scale(1.05); }
+  78%     { opacity: 0.55; transform: scale(1.12); }
+  100%    { opacity: 0; transform: scale(1.18); }
 }
 
 
