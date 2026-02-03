@@ -25,51 +25,9 @@ body {
   z-index: 1;
 }
 
-.header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  /* ✨ Efecto brillo/destello suave (sin cambiar el fondo) */
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 45%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0) 55%),
-    linear-gradient(120deg,
-      rgba(255,255,255,0) 0%,
-      rgba(255,255,255,0.20) 45%,
-      rgba(255,255,255,0) 70%
-    );
-
-  background-size: 200% 200%;
-  background-position: 0% 0%;
-  mix-blend-mode: screen;
-  opacity: 0.65;
-
-  pointer-events: none;
-  z-index: 2;
-
-  animation: headerGlow 6s ease-in-out infinite;
-}
-
-/* Animación del brillo del header */
-@keyframes headerGlow {
-  0% {
-    background-position: 0% 0%;
-    opacity: 0.32;
-  }
-  50% {
-    background-position: 100% 100%;
-    opacity: 0.50;
-  }
-  100% {
-    background-position: 0% 0%;
-    opacity: 0.32;
-  }
-}
-
 .header * {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 .header img {
@@ -159,14 +117,37 @@ body {
 }
 
 /* IMÁGENES POR SERVICIO */
-.card.mantenimiento::before { background-image: url("../IMG/mant.png"); }
-.card.reemplazo::before { background-image: url("../IMG/reemp.png"); }
-.card.software::before { background-image: url("../IMG/soft.png"); }
-.card.formateo::before { background-image: url("../IMG/format.png"); }
-.card.virus::before { background-image: url("../IMG/vir.png"); }
-.card.respaldo::before { background-image: url("../IMG/respald.png"); }
-.card.nuevo::before { background-image: url("../IMG/new.png"); }
-.card.hardware::before { background-image: url("../IMG/hardw.png"); }
+.card.mantenimiento::before {
+  background-image: url("../IMG/mant.png");
+}
+
+.card.reemplazo::before {
+  background-image: url("../IMG/reemp.png");
+}
+
+.card.software::before {
+  background-image: url("../IMG/soft.png");
+}
+
+.card.formateo::before {
+  background-image: url("../IMG/format.png");
+}
+
+.card.virus::before {
+  background-image: url("../IMG/vir.png");
+}
+
+.card.respaldo::before {
+  background-image: url("../IMG/respald.png");
+}
+
+.card.nuevo::before {
+  background-image: url("../IMG/new.png");
+}
+
+.card.hardware::before {
+  background-image: url("../IMG/hardw.png");
+}
 
 /* ===== DETALLE DE SERVICIO ===== */
 .detalle-servicio {
@@ -258,22 +239,19 @@ footer {
   .servicios {
     grid-template-columns: 1fr;   /* una columna */
     max-width: 420px;
-    margin: 0 auto;              /* 🔥 centra el contenedor */
-    justify-items: center;       /* 🔥 centra las cards */
+    margin: 0 auto;              /* centra el contenedor */
+    justify-items: center;       /* centra las cards */
   }
 
   .card {
     width: 100%;                 /* ocupa el ancho del grid */
+    max-width: 360px;
+    height: 150px;
   }
 
   .header img {
-    max-width: 300px; /* Logo Celular */
+    max-width: 300px;            /* ✅ tamaño correcto en móvil */
   }
-}
-
-/* Ajuste fino: título ocupa todo el ancho en grid */
-.titulo-servicios {
-  grid-column: 1 / -1;
 }
 
 /* ===== TITULO SERVICIOS PRO ===== */
@@ -297,16 +275,245 @@ footer {
   border-radius: 20px;
 }
 
-/* ===== FIX: centrar logo del header ===== */
-.header img {
+/* CONTENEDOR DE CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ============================= */
+/* DETALLE DE SERVICIOS (PAGINAS INTERNAS) */
+/* ============================= */
+
+.detalle-servicio {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 50px 30px;
+  background-color: #f1f3f5; /* gris limpio, profesional */
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.10);
+  text-align: center;
+}
+
+/* TITULO PRINCIPAL */
+.detalle-servicio h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #0a1f44; /* azul oscuro corporativo */
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* LINEA DECORATIVA DEL TITULO */
+.detalle-servicio h1::after {
+  content: "";
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 90px;
+  height: 5px;
+  background-color: #1f3c88; /* azul Soluciones Segura */
+  margin: 16px auto 0;
+  border-radius: 10px;
+}
+
+/* TEXTO */
+.detalle-servicio p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #2e2e2e;
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+
+/* IMAGEN */
+.detalle-servicio img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  margin-bottom: 35px;
+}
+
+/* BOTON VOLVER */
+.detalle-servicio .volver {
+  display: inline-block;
+  background-color: #0a1f44; /* azul oscuro */
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.detalle-servicio .volver:hover {
+  background-color: #1f3c88;
+  transform: translateY(-2px);
+}
+
+/* ===== ICONOS SERVICIOS ===== */
+.icono-servicio {
+  font-size: 5.5rem;   /* 🔥 tamaño del icono */
+  color: #1f3c88;      /* azul Soluciones Segura */
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .icono-servicio {
+    font-size: 4.5rem;
+  }
+}
+
+/* ===== ANIMACIÓN ICONOS SERVICIOS ===== */
+.icono-servicio {
+  animation: aparecerIcono 0.9s ease-out forwards,
+             pulsoSuave 3.5s ease-in-out infinite;
+}
+
+/* Aparece suavemente */
+@keyframes aparecerIcono {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Pulso muy sutil */
+@keyframes pulsoSuave {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* Hover elegante */
+.icono-servicio:hover {
+  transform: scale(1.12);
+  transition: transform 0.25s ease;
+}
+
+ /* ===== CONTACTO MEJORADO ===== */
+.contacto h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 12px 0;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contacto-item i {
+  font-size: 1.6rem;
+  color: #25D366; /* WhatsApp por defecto */
+}
+
+/* Facebook azul */
+.link-facebook i {
+  color: #1877f2;
+}
+
+/* Hover sutil profesional */
+.contacto-item:hover {
+  opacity: 0.85;
+}
+
+/* 📱 MÓVIL */
+@media (max-width: 768px) {
+  .contacto h2 {
+    font-size: 1.7rem;
+  }
+
+  .contacto-item {
+    font-size: 1.05rem;
+  }
+
+  .contacto-item i {
+    font-size: 1.4rem;
+  }
+}
+ 
+/* ===== SEPARADOR CONTACTO (DEGRADADO PRO) ===== */
+.separador-contacto {
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #25D366, #1877f2);
+  margin: 18px auto;
+  border-radius: 20px;
+}
+
+/* ===== ITEMS CONTACTO ===== */
+.contacto-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.contacto-item i {
+  font-size: 1.4rem;
+}
+
+/* ===== H1 HEADER: Soporte Técnico Informático ===== */
+.header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+
+  color: #ffffff;
+
+  /* Sombras suaves que simulan borde limpio */
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.8),
+   -1px 1px 2px rgba(0, 0, 0, 0.8),
+    1px -1px 2px rgba(0, 0, 0, 0.8),
+   -1px -1px 2px rgba(0, 0, 0, 0.8),
+    0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Ajuste fino: subir títulos de sección */
+.servicios h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
 }
 
 /* ===== NUEVA SECCIÓN: UBICACIÓN ===== */
 .ubicacion {
-  background: #2f3a46;
+  background: #2f3a46; /* gris azulado elegante (combina con contacto y footer) */
   color: #ffffff;
   text-align: center;
   padding: 30px;
@@ -351,7 +558,7 @@ footer {
   justify-content: center;
   gap: 10px;
 
-  background: #1ea7fd;
+  background: #1ea7fd; /* azul Waze */
   color: #ffffff;
   padding: 12px 18px;
   border-radius: 14px;
@@ -371,6 +578,7 @@ footer {
   box-shadow: 0 8px 18px rgba(0,0,0,0.25);
 }
 
+/* Responsive: Ubicación */
 @media (max-width: 768px) {
   .ubicacion h2 {
     font-size: 1.7rem;
@@ -382,5 +590,433 @@ footer {
     gap: 8px;
   }
 }
+
+/* ===================================================== */
+/* MICRO-MEJORAS PRO (NO ROMPEN DISEÑO) */
+/* Pegar al FINAL del style.css */
+/* ===================================================== */
+
+/* 1) Mejor lectura y renderizado (no cambia tamaños) */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif; /* consistencia con tu marca */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2) Scroll suave (no afecta diseño) */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* 3) Selección de texto elegante (detalle pro) */
+::selection {
+  background: rgba(31, 60, 136, 0.35);
+}
+
+/* 4) Links y botones: transiciones suaves (sin cambiar colores base) */
+a, .card, .volver, .ubicacion-waze, .contacto-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+/* 5) Accesibilidad: enfoque visible solo con teclado (no cambia estética normal) */
+a:focus-visible,
+button:focus-visible,
+.card:focus-visible,
+.volver:focus-visible,
+.whatsapp:focus-visible {
+  outline: 3px solid rgba(37, 211, 102, 0.75); /* verde WhatsApp */
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* 6) Mejor sensación al tocar en móvil (no cambia el look) */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 7) Cards: clic/touch se siente “premium” sin mover layout */
+.card:active {
+  transform: scale(0.98);
+}
+
+/* 8) Botón Volver: hover más fino sin cambiar color */
+.volver:hover {
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* 9) Botón WhatsApp flotante: un toque pro al pasar el mouse */
+.whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* 10) Mejor consistencia de espaciados en títulos de secciones (SIN mover el diseño de forma notable) */
+.titulo-servicios {
+  margin-top: 0; /* evita “aire” extra arriba si aparece */
+}
+
+/* 11) Evitar que imágenes se “estiren” en pantallas raras (sin cambiar tamaños actuales) */
+img {
+  height: auto;
+}
+
+/* 12) Respeto a usuarios con “reducir movimiento” (no cambia para la mayoría) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== PERF PRO: carga visual estable de imágenes (sin cambiar diseño) ===== */
+img {
+  display: block;       /* evita pequeños espacios raros debajo de imágenes */
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== FIX: centrar logo del header ===== */
+.header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajuste fino: título ocupa todo el ancho en grid */
+.titulo-servicios {
+  grid-column: 1 / -1;
+}
+
+/* ===== Extras PRO: páginas internas ===== */
+.subtitulo-servicio {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  color: #0a1f44;
+}
+
+.lista-servicio {
+  text-align: left;
+  max-width: 750px;
+  margin: 0 auto 20px;
+  padding-left: 22px;
+  color: #2e2e2e;
+  line-height: 1.7;
+}
+
+.lista-servicio li {
+  margin: 8px 0;
+}
+
+.btn-wsp-servicio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto 25px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: #25D366;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.btn-wsp-servicio i {
+  font-size: 1.3rem;
+}
+
+.btn-wsp-servicio:hover {
+  opacity: 0.9;
+}
+
+/* ============================= */
+/* SEO/CONVERSIÓN PRO (PÁGINAS INTERNAS) */
+/* ============================= */
+
+.subtitulo-servicio {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  color: #0a1f44;
+}
+
+.lista-servicio {
+  text-align: left;
+  max-width: 750px;
+  margin: 0 auto 18px;
+  padding-left: 22px;
+  color: #2e2e2e;
+  line-height: 1.7;
+}
+
+.lista-servicio li {
+  margin: 8px 0;
+}
+
+/* Botón WhatsApp por servicio */
+.btn-wsp-servicio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 10px auto 25px;
+  padding: 12px 22px;
+  border-radius: 30px;
+
+  background: #25D366;
+  color: #fff !important;
+  text-decoration: none;
+
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.btn-wsp-servicio i {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.btn-wsp-servicio:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  transition: 0.2s ease;
+}
+
+/* Texto PRO en páginas internas */
+.texto-servicio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #2e2e2e;
+  max-width: 750px;
+  margin: 0 auto 22px;
+}
+
+/* ===== FAQ ACORDEÓN (SIN ROMPER DISEÑO) ===== */
+.faq-accordion {
+  max-width: 750px;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+
+.faq-accordion details {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.faq-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 800;
+  color: #0a1f44; /* azul oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Flecha */
+.faq-accordion summary::after {
+  content: "▾";
+  font-size: 1.2rem;
+  color: #1f3c88;
+  transition: transform 0.25s ease;
+}
+
+/* Flecha al abrir */
+.faq-accordion details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* Contenido animado */
+.faq-accordion .faq-content {
+  padding: 0 18px;
+  color: #2e2e2e;
+  line-height: 1.7;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* Abierto */
+.faq-accordion details[open] .faq-content {
+  padding-bottom: 16px;
+  max-height: 220px; /* suficiente para 2-3 líneas; sube si tus respuestas son largas */
+  opacity: 1;
+}
+
+/* Hover suave (pro) */
+.faq-accordion summary:hover {
+  background: rgba(31, 60, 136, 0.06);
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .faq-accordion summary {
+    padding: 14px 16px;
+    font-size: 1.02rem;
+  }
+  .faq-accordion .faq-content {
+    padding: 0 16px;
+  }
+}
+
+/* ===== FAQ ACORDEÓN (CENTRADO) ===== */
+.faq-accordion {
+  max-width: 750px;
+  margin: 0 auto 30px;
+  text-align: center; /* 🔥 CENTRADO GENERAL */
+}
+
+.faq-accordion details {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* PREGUNTA */
+.faq-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 800;
+  color: #0a1f44;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 🔥 CENTRAR TEXTO */
+  gap: 12px;
+  text-align: center;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Flecha */
+.faq-accordion summary::after {
+  content: "▾";
+  font-size: 1.2rem;
+  color: #1f3c88;
+  transition: transform 0.25s ease;
+}
+
+/* Flecha al abrir */
+.faq-accordion details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* RESPUESTA */
+.faq-accordion .faq-content {
+  padding: 0 18px;
+  color: #2e2e2e;
+  line-height: 1.7;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-align: center; /* 🔥 RESPUESTA CENTRADA */
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.faq-accordion details[open] .faq-content {
+  padding-bottom: 16px;
+  max-height: 260px;
+  opacity: 1;
+}
+
+/* Hover sutil */
+.faq-accordion summary:hover {
+  background: rgba(31, 60, 136, 0.06);
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .faq-accordion summary {
+    font-size: 1.02rem;
+  }
+}
+
+/* ===== EFECTO LUZ SUAVE EN IMAGEN DE FONDO (HEADER) ===== */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  /* Luz suave tipo spotlight */
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.05) 35%,
+      rgba(0, 0, 0, 0) 60%
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
