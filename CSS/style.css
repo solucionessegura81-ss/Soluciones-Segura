@@ -988,14 +988,14 @@ img {
   inset: -20%;
 
   background:
-    radial-gradient(circle at 30% 35%, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 35%),
-    radial-gradient(circle at 70% 65%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 40%);
+    radial-gradient(circle at 30% 35%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 35%),
+    radial-gradient(circle at 70% 65%, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 40%);
 
   opacity: 0.0;
   pointer-events: none;
   z-index: 1;
 
-  animation: destelloHeader 7s ease-in-out infinite;
+  animation: destelloHeader 5s ease-in-out infinite;
 }
 
 /* Mantiene texto y logo arriba */
@@ -1024,6 +1024,7 @@ img {
     transform: translateX(10px) translateY(10px);
   }
 }
+
 
 
 
