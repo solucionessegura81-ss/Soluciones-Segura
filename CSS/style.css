@@ -882,6 +882,84 @@ img {
   }
 }
 
+/* ===== FAQ ACORDEÓN (CENTRADO) ===== */
+.faq-accordion {
+  max-width: 750px;
+  margin: 0 auto 30px;
+  text-align: center; /* 🔥 CENTRADO GENERAL */
+}
+
+.faq-accordion details {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* PREGUNTA */
+.faq-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 800;
+  color: #0a1f44;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 🔥 CENTRAR TEXTO */
+  gap: 12px;
+  text-align: center;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Flecha */
+.faq-accordion summary::after {
+  content: "▾";
+  font-size: 1.2rem;
+  color: #1f3c88;
+  transition: transform 0.25s ease;
+}
+
+/* Flecha al abrir */
+.faq-accordion details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* RESPUESTA */
+.faq-accordion .faq-content {
+  padding: 0 18px;
+  color: #2e2e2e;
+  line-height: 1.7;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-align: center; /* 🔥 RESPUESTA CENTRADA */
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.faq-accordion details[open] .faq-content {
+  padding-bottom: 16px;
+  max-height: 260px;
+  opacity: 1;
+}
+
+/* Hover sutil */
+.faq-accordion summary:hover {
+  background: rgba(31, 60, 136, 0.06);
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .faq-accordion summary {
+    font-size: 1.02rem;
+  }
+}
+
+
 
 
 
