@@ -31,7 +31,7 @@ body {
 }
 
 .header img {
-  width: 560px;      /* tamaño real del logo */
+  width: 680px;      /* tamaño real del logo */
   max-width: 95%;
   height: auto;
   margin-bottom: 25px;
@@ -239,23 +239,18 @@ footer {
   .servicios {
     grid-template-columns: 1fr;   /* una columna */
     max-width: 420px;
-    margin: 0 auto;              /* 🔥 centra el contenedor */
-    justify-items: center;       /* 🔥 centra las cards */
+    margin: 0 auto;              /* centra el contenedor */
+    justify-items: center;       /* centra las cards */
   }
 
   .card {
     width: 100%;                 /* ocupa el ancho del grid */
-  }
-}
-
-  .card {
-    width: 90%;
     max-width: 360px;
     height: 150px;
   }
 
   .header img {
-    max-width: 300px; /* Logo Celular */
+    max-width: 300px;            /* ✅ tamaño correcto en móvil */
   }
 }
 
@@ -958,6 +953,7 @@ img {
     font-size: 1.02rem;
   }
 }
+
 
 
 
