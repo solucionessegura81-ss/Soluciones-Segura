@@ -954,6 +954,24 @@ img {
   }
 }
 
+/* ===== EFECTO LUZ SUAVE EN IMAGEN DE FONDO (HEADER) ===== */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  /* Luz suave tipo spotlight */
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.05) 35%,
+      rgba(0, 0, 0, 0) 60%
+    );
+}
+
 
 
 
