@@ -794,6 +794,15 @@ img {
   transition: 0.2s ease;
 }
 
+/* Texto PRO en páginas internas */
+.texto-servicio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #2e2e2e;
+  max-width: 750px;
+  margin: 0 auto 22px;
+}
+
 
 
 
