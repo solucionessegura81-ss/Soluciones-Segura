@@ -995,7 +995,7 @@ img {
   pointer-events: none;
   z-index: 1;
 
-  animation: destelloHeader 5s ease-in-out infinite;
+  animation: destelloHeader 7s ease-in-out infinite;
 }
 
 /* Mantiene texto y logo arriba */
@@ -1024,6 +1024,7 @@ img {
     transform: translateX(10px) translateY(10px);
   }
 }
+
 
 
 
