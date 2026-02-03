@@ -954,43 +954,36 @@ img {
   }
 }
 
-/* ============================================= */
-/* FLASH CENTRAL + BANDA DE LUZ (LENS FLARE) */
-/* ============================================= */
-
+/* DESTELLO SOLAR (CENTRO -> EXPANDE) */
 .header { position: relative; overflow: hidden; }
 
-.header::after {
-  content: "";
-  position: absolute;
-  inset: -30%;
-  background:
-    radial-gradient(circle at 50% 50%,
-      rgba(255,255,255,0.95) 0%,
-      rgba(255,255,255,0.25) 28%,
-      rgba(255,255,255,0) 62%
-    ),
-    linear-gradient(115deg,
-      rgba(255,255,255,0) 40%,
-      rgba(255,255,255,0.35) 50%,
-      rgba(255,255,255,0) 60%
-    );
-
-  opacity: 0;
-  filter: blur(1px);
-  pointer-events: none;
-  z-index: 1;
-
-  animation: flareCentro 6s ease-in-out infinite;
+.header::after{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  width:18vmax; height:18vmax;
+  transform:translate(-50%,-50%) scale(0.4);
+  border-radius:50%;
+  background: radial-gradient(circle,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,0.85) 10%,
+    rgba(255,255,255,0.35) 25%,
+    rgba(255,255,255,0) 60%
+  );
+  opacity:0;
+  pointer-events:none;
+  z-index:1;
+  mix-blend-mode: screen; /* hace que se vea como luz real */
+  animation:destelloSolar 5s ease-in-out infinite;
 }
 
-.header * { position: relative; z-index: 2; }
+.header *{ position:relative; z-index:2; }
 
-@keyframes flareCentro {
-  0%, 55% { opacity: 0; transform: scale(0.9); }
-  65%     { opacity: 0.95; transform: scale(1.05); }
-  78%     { opacity: 0.55; transform: scale(1.12); }
-  100%    { opacity: 0; transform: scale(1.18); }
+@keyframes destelloSolar{
+  0%,60%{ opacity:0; transform:translate(-50%,-50%) scale(0.35); }
+  70%{ opacity:1; transform:translate(-50%,-50%) scale(1.25); }
+  85%{ opacity:0.35; transform:translate(-50%,-50%) scale(1.8); }
+  100%{ opacity:0; transform:translate(-50%,-50%) scale(2.1); }
 }
 
 
