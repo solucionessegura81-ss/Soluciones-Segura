@@ -740,6 +740,60 @@ img {
   opacity: 0.9;
 }
 
+/* ============================= */
+/* SEO/CONVERSIÓN PRO (PÁGINAS INTERNAS) */
+/* ============================= */
+
+.subtitulo-servicio {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  color: #0a1f44;
+}
+
+.lista-servicio {
+  text-align: left;
+  max-width: 750px;
+  margin: 0 auto 18px;
+  padding-left: 22px;
+  color: #2e2e2e;
+  line-height: 1.7;
+}
+
+.lista-servicio li {
+  margin: 8px 0;
+}
+
+/* Botón WhatsApp por servicio */
+.btn-wsp-servicio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 10px auto 25px;
+  padding: 12px 22px;
+  border-radius: 30px;
+
+  background: #25D366;
+  color: #fff !important;
+  text-decoration: none;
+
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.btn-wsp-servicio i {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.btn-wsp-servicio:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  transition: 0.2s ease;
+}
+
 
 
 
