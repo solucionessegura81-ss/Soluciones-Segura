@@ -237,8 +237,14 @@ footer {
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
   .servicios {
-    grid-template-columns: 1fr; /* 1 columna en móvil */
+    grid-template-columns: 1fr;   /* una columna */
     max-width: 420px;
+    margin: 0 auto;              /* 🔥 centra el contenedor */
+    justify-items: center;       /* 🔥 centra las cards */
+  }
+
+  .card {
+    width: 100%;                 /* ocupa el ancho del grid */
   }
 }
 
@@ -691,6 +697,7 @@ img {
 .titulo-servicios {
   grid-column: 1 / -1;
 }
+
 
 
 
