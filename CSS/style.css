@@ -1151,5 +1151,21 @@ img {
   width: 100%;
 }
 
+/* ✅ Permitir zoom en móvil sin perder el efecto */
+@media (pointer: coarse) {
+  .detalle-servicio .img-shine {
+    overflow: visible; /* deja que el pinch-zoom funcione */
+  }
+
+  /* El brillo sigue recortado usando un pseudo "clip" en la imagen */
+  .detalle-servicio .img-shine img {
+    border-radius: 14px;
+  }
+
+  /* Cuando está brillando, recortamos temporalmente para que el destello no se salga */
+  .detalle-servicio .img-shine.is-shining {
+    overflow: hidden;
+  }
+}
 
 
