@@ -1141,4 +1141,9 @@ img {
   .img-shine::after{ animation: none !important; }
 }
 
+/* ✅ Disparo automático cuando entra en pantalla (por JS) */
+.img-shine.is-shining::after {
+  opacity: 1;
+  animation: shineSweepImg 1.05s ease-out 1;
+}
 
