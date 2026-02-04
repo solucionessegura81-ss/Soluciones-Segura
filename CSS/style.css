@@ -1045,6 +1045,38 @@ img {
   box-shadow: 0 8px 18px rgba(24, 119, 242, 0.35); /* azul Facebook suave */
 }
 
+/* ===== BOTÓN FACEBOOK (SOLO QUIÉNES SOMOS) ===== */
+.btn-facebook{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 10px auto 18px;
+  padding: 12px 22px;
+  border-radius: 30px;
+
+  background: #1877f2;      /* Azul Facebook */
+  color: #ffffff !important;
+  text-decoration: none;
+
+  font-weight: 800;
+
+  /* ✅ Sombra azul visible en fondo blanco */
+  box-shadow: 0 12px 26px rgba(24, 119, 242, 0.40);
+}
+
+.btn-facebook i{
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.btn-facebook:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(24, 119, 242, 0.52);
+  opacity: 0.96;
+}
 .btn-facebook:hover {
   box-shadow: 0 12px 26px rgba(24, 119, 242, 0.5); /* un poco más fuerte al pasar el mouse */
 }
+
