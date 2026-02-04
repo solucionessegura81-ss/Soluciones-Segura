@@ -1074,24 +1074,25 @@ img {
 .detalle-servicio .img-shine{
   position: relative;
   display: block;
-  overflow: hidden;
   border-radius: 14px;
   margin: 30px auto;
   max-width: 100%;
   width: 600px;
+
+  overflow: hidden;                 /* recorta brillo en PC */
+  touch-action: pan-y pinch-zoom;   /* permite scroll y zoom en móvil */
 }
 
-/* 🔹 FIX MOBILE: evita hover pegajoso */
-.detalle-servicio .img-shine{
-  touch-action: pan-y pinch-zoom;
-}
-
-/* La imagen dentro: ocupa el contenedor */
+/* Imagen dentro */
 .detalle-servicio .img-shine img{
   display: block;
   width: 100%;
   height: auto;
   border-radius: 14px;
+
+  /* Evita doble sombra/margen si la img ya tenía estilos */
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
 /* Brillo */
@@ -1113,7 +1114,7 @@ img {
   opacity: 0;
 }
 
-/* PC: hover real (mouse) */
+/* PC: hover real */
 @media (hover: hover) and (pointer: fine) {
   .detalle-servicio .img-shine:hover::after{
     opacity: 1;
@@ -1121,16 +1122,12 @@ img {
   }
 }
 
-/* MÓVIL: NO usamos :active porque es inconsistente (lo hace el JS) */
-.detalle-servicio .img-shine:active::after{
-  /* vacío / opcional: lo dejamos sin animación */
-}
-
-/* ✅ Esto es lo que usa el JS para disparar el brillo en cualquier dispositivo */
+/* JS: dispara brillo en cualquier dispositivo */
 .detalle-servicio .img-shine.is-shining::after{
   opacity: 1;
   animation: shineSweepImg 1.05s ease-out 1;
 }
+
 @keyframes shineSweepImg{
   0%   { transform: translate(-35%, -35%); opacity: 0; }
   10%  { opacity: 1; }
@@ -1144,28 +1141,17 @@ img {
   }
 }
 
-/* Evita doble sombra/margen en imágenes envueltas con .img-shine */
-.detalle-servicio .img-shine img{
-  box-shadow: none !important;
-  margin: 0 !important;
-  width: 100%;
-}
-
-/* ✅ Permitir zoom en móvil sin perder el efecto */
+/* ✅ FIX ZOOM móvil:
+   Permite pinch-zoom cuando la imagen está quieta,
+   pero recorta el brillo solo durante la animación */
 @media (pointer: coarse) {
-  .detalle-servicio .img-shine {
-    overflow: visible; /* deja que el pinch-zoom funcione */
+  .detalle-servicio .img-shine{
+    overflow: visible; /* habilita el gesto de zoom en muchos Android */
   }
-
-  /* El brillo sigue recortado usando un pseudo "clip" en la imagen */
-  .detalle-servicio .img-shine img {
-    border-radius: 14px;
-  }
-
-  /* Cuando está brillando, recortamos temporalmente para que el destello no se salga */
-  .detalle-servicio .img-shine.is-shining {
-    overflow: hidden;
+  .detalle-servicio .img-shine.is-shining{
+    overflow: hidden;  /* recorta el destello solo cuando corre */
   }
 }
+
 
 
