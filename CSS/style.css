@@ -1256,3 +1256,40 @@ img {
   }
 }
 
+/* ===================================================== */
+/* FIX FINAL: BOTÓN WHATSAPP 100% CENTRADO EN MÓVIL */
+/* ===================================================== */
+@media (max-width: 768px) {
+
+  /* Asegura que el contenedor no empuje hijos */
+  .detalle-servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Botón WhatsApp: centrado real */
+  .btn-wsp-servicio {
+    position: relative;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: 14px 0 10px 0 !important;
+
+    width: calc(100% - 32px);
+    max-width: 340px;
+
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Microcopy alineado EXACTO al botón */
+  .microcopy-wsp {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+}
