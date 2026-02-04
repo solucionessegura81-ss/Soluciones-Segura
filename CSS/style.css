@@ -1079,18 +1079,17 @@ img {
   max-width: 100%;
   width: 600px;
 
-  overflow: hidden;                 /* recorta brillo en PC */
-  touch-action: pan-y pinch-zoom;   /* permite scroll y zoom en móvil */
+  overflow: hidden; /* PC: recorta brillo */
 }
 
-/* Imagen dentro */
+/* Imagen: AQUÍ vive el zoom */
 .detalle-servicio .img-shine img{
   display: block;
   width: 100%;
   height: auto;
   border-radius: 14px;
 
-  /* Evita doble sombra/margen si la img ya tenía estilos */
+  touch-action: pinch-zoom; /* ✅ habilita zoom real */
   box-shadow: none !important;
   margin: 0 !important;
 }
@@ -1122,7 +1121,7 @@ img {
   }
 }
 
-/* JS: dispara brillo en cualquier dispositivo */
+/* JS: dispara brillo */
 .detalle-servicio .img-shine.is-shining::after{
   opacity: 1;
   animation: shineSweepImg 1.05s ease-out 1;
@@ -1134,24 +1133,23 @@ img {
   100% { transform: translate(35%, 35%); opacity: 0; }
 }
 
-/* Respeta reduce motion */
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce){
   .detalle-servicio .img-shine::after{
     animation: none !important;
   }
 }
 
-/* ✅ FIX ZOOM móvil:
-   Permite pinch-zoom cuando la imagen está quieta,
-   pero recorta el brillo solo durante la animación */
-@media (pointer: coarse) {
+/* 📱 MÓVIL: permitir zoom normalmente */
+@media (pointer: coarse){
   .detalle-servicio .img-shine{
-    overflow: visible; /* habilita el gesto de zoom en muchos Android */
+    overflow: visible; /* ✅ Android permite pinch-zoom */
   }
+
+  /* Solo recortamos cuando corre el brillo */
   .detalle-servicio .img-shine.is-shining{
-    overflow: hidden;  /* recorta el destello solo cuando corre */
+    overflow: hidden;
   }
 }
-
 
 
