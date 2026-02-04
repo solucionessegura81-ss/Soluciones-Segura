@@ -1198,136 +1198,35 @@ img {
 }
 
 /* ===================================================== */
-/* FIX: BOTÓN WHATSAPP PERFECTAMENTE CENTRADO (MÓVIL) */
+/* FIX FINAL: CENTRADO PERFECTO BOTÓN WHATSAPP (MÓVIL) */
 /* ===================================================== */
+
 @media (max-width: 768px) {
 
   .btn-wsp-servicio {
-    display: flex;              /* mejor que inline-flex en móvil */
-    justify-content: center;
+    display: flex;
     align-items: center;
-
-    margin-left: auto;          /* fuerza centrado real */
-    margin-right: auto;
+    justify-content: center;
 
     width: 100%;
     max-width: 340px;
-
-    text-align: center;
-  }
-
-}
-
-/* ===================================================== */
-/* FIX DEFINITIVO: CONTENEDOR + BOTÓN CENTRADOS EN MÓVIL */
-/* ===================================================== */
-@media (max-width: 768px) {
-
-  /* 1️⃣ Contenedor blanco perfectamente centrado */
-  .detalle-servicio {
-    margin-left: auto !important;
-    margin-right: auto !important;
-
-    width: calc(100% - 24px);   /* evita desbordes */
-    max-width: 100%;
-
-    box-sizing: border-box;
-  }
-
-  /* 2️⃣ Botón WhatsApp REALMENTE centrado */
-  .btn-wsp-servicio {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
 
     margin-left: auto !important;
     margin-right: auto !important;
 
-    width: calc(100% - 24px);
-    max-width: 340px;
-
-    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  /* 3️⃣ Microcopy alineado con el botón */
-  .microcopy-wsp {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ===================================================== */
-/* FIX FINAL: BOTÓN WHATSAPP 100% CENTRADO EN MÓVIL */
-/* ===================================================== */
-@media (max-width: 768px) {
-
-  /* Asegura que el contenedor no empuje hijos */
-  .detalle-servicio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* Ícono WhatsApp: compensación visual */
+  .btn-wsp-servicio i {
+    margin-right: 10px;
+    flex-shrink: 0;
   }
 
-  /* Botón WhatsApp: centrado real */
+  /* Texto centrado REAL */
+  .btn-wsp-servicio span,
   .btn-wsp-servicio {
-    position: relative;
-
-    left: 50%;
-    transform: translateX(-50%);
-
-    margin: 14px 0 10px 0 !important;
-
-    width: calc(100% - 32px);
-    max-width: 340px;
-
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Microcopy alineado EXACTO al botón */
-  .microcopy-wsp {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ===================================================== */
-/* FIX FINAL: BOTÓN WHATSAPP 100% CENTRADO EN MÓVIL */
-/* ===================================================== */
-@media (max-width: 768px) {
-
-  /* Asegura que el contenedor no empuje hijos */
-  .detalle-servicio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Botón WhatsApp: centrado real */
-  .btn-wsp-servicio {
-    position: relative;
-
-    left: 50%;
-    transform: translateX(-50%);
-
-    margin: 14px 0 10px 0 !important;
-
-    width: calc(100% - 32px);
-    max-width: 340px;
-
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Microcopy alineado EXACTO al botón */
-  .microcopy-wsp {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
     text-align: center;
   }
 }
