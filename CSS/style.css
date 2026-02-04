@@ -1069,28 +1069,35 @@ img {
 
 /* ===================================================== */
 /* EFECTO SHINE EN IMÁGENES INTERNAS (SERVICIOS) */
-/* Se activa: hover (PC) + tap (móvil) */
+/* Se activa: hover (PC) + tap/focus (móvil) */
+/* Mantiene tamaño original (600px + responsive) */
 /* ===================================================== */
 
-/* Contenedor que envuelve la imagen */
-.img-shine {
+/* Contenedor que envuelve la imagen (MISMO tamaño que antes) */
+.img-shine{
   position: relative;
-  display: inline-block;
   overflow: hidden;          /* recorta el brillo dentro del borde */
-  border-radius: 14px;       /* igual al estilo de .detalle-servicio img */
+
+  /* ✅ Mantener el tamaño original de la imagen */
+  width: 600px;
+  max-width: 100%;
+  display: block;
+  margin: 30px auto;
+
+  border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* La imagen adentro (sin romper tamaños existentes) */
-.img-shine img {
+/* La imagen adentro (NO cambia tamaño, solo rellena el contenedor) */
+.img-shine img{
   display: block;
   width: 100%;
   height: auto;
   border-radius: 14px;
 }
 
-/* Brillo */
-.img-shine::after {
+/* Brillo (apagado por defecto) */
+.img-shine::after{
   content: "";
   position: absolute;
   inset: -40%;
@@ -1108,27 +1115,30 @@ img {
   opacity: 0;
 }
 
-/* ✅ PC: cuando pasas el mouse */
-.img-shine:hover::after {
+/* ✅ PC: hover */
+.img-shine:hover::after{
   opacity: 1;
   animation: shineSweepImg 1.05s ease-out 1;
 }
 
-/* ✅ MÓVIL: cuando tocas */
-.img-shine:active::after {
+/* ✅ MÓVIL: cuando tocas y queda enfocado (recomendado) */
+.img-shine:focus::after,
+.img-shine:focus-within::after,
+.img-shine:active::after{
   opacity: 1;
   animation: shineSweepImg 1.05s ease-out 1;
 }
 
-/* Animación para imágenes */
-@keyframes shineSweepImg {
+/* Animación */
+@keyframes shineSweepImg{
   0%   { transform: translate(-35%, -35%); opacity: 0; }
   10%  { opacity: 1; }
   100% { transform: translate(35%, 35%); opacity: 0; }
 }
 
 /* Respeta reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .img-shine::after { animation: none !important; }
+@media (prefers-reduced-motion: reduce){
+  .img-shine::after{ animation: none !important; }
 }
+
 
