@@ -25,10 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
 
     // ✅ Tap: funciona en iPhone/Android y se repite cada vez
-    const tapHandler = () => triggerShine(el);
+   const tapHandler = (ev) => {
+  // Evita que el navegador “pegue” hover raro
+  ev.preventDefault();
+  triggerShine(el);
+};
 
-    el.addEventListener("pointerdown", tapHandler, { passive: true });
-    el.addEventListener("touchstart", tapHandler, { passive: true });
-    el.addEventListener("click", tapHandler);
+el.addEventListener("touchstart", tapHandler, { passive: false });
+el.addEventListener("pointerdown", tapHandler, { passive: false });
+el.addEventListener("click", () => triggerShine(el));
   });
 });
