@@ -1146,3 +1146,53 @@ img {
 .detalle-servicio .img-shine img{
   cursor: default !important;   /* o 'pointer' si preferís */
 }
+
+/* ===================================================== */
+/* MODO ULTRA MINIMALISTA – SOLO MÓVIL (PÁGINAS INTERNAS) */
+/* ===================================================== */
+@media (max-width: 768px) {
+
+  /* Menos aire arriba, lectura más directa */
+  .detalle-servicio {
+    padding: 35px 18px;
+  }
+
+  /* Título más compacto */
+  .detalle-servicio h1 {
+    font-size: 2.1rem;
+    margin-bottom: 18px;
+  }
+
+  /* Microcopy más protagonista */
+  .microcopy-wsp {
+    font-size: 0.95rem;
+    margin-top: 6px;
+    margin-bottom: 22px;
+    opacity: 0.95;
+  }
+
+  /* Botón WhatsApp manda */
+  .btn-wsp-servicio {
+    width: 100%;
+    max-width: 340px;
+    justify-content: center;
+    font-size: 1.05rem;
+  }
+
+  /* Imagen: se ve primero y limpia */
+  .detalle-servicio .img-shine {
+    margin: 24px auto;
+  }
+
+  /* Texto largo respira mejor */
+  .texto-servicio {
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  /* FAQ sin saturar */
+  .faq-accordion {
+    margin-top: 25px;
+  }
+
+}
