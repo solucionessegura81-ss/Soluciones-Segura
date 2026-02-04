@@ -1069,18 +1069,21 @@ img {
 
 /* ===================================================== */
 /* EFECTO SHINE EN IMÁGENES INTERNAS (SERVICIOS) */
-/* Hover (PC) + Tap (móvil) + Auto al entrar en pantalla (JS) */
 /* ===================================================== */
 
-/* Contenedor (NO cambia tamaños, solo recorta el brillo) */
 .detalle-servicio .img-shine{
   position: relative;
-  display: block;          /* para que pueda centrarse igual que tu imagen */
-  overflow: hidden;        /* recorta el brillo dentro del borde */
-  border-radius: 14px;     /* igual que tu estilo actual */
-  margin: 30px auto;       /* igual que la imagen estaba centrada */
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+  margin: 30px auto;
   max-width: 100%;
-  width: 600px;            /* ✅ mantiene el tamaño “de siempre” en PC */
+  width: 600px;
+}
+
+/* 🔹 FIX MOBILE: evita hover pegajoso */
+.detalle-servicio .img-shine{
+  touch-action: manipulation;
 }
 
 /* La imagen dentro: ocupa el contenedor */
@@ -1147,4 +1150,5 @@ img {
   margin: 0 !important;
   width: 100%;
 }
+
 
