@@ -1110,24 +1110,24 @@ img {
   opacity: 0;
 }
 
-/* PC: hover */
-.detalle-servicio .img-shine:hover::after{
-  opacity: 1;
-  animation: shineSweepImg 1.05s ease-out 1;
+/* PC: hover real (mouse) */
+@media (hover: hover) and (pointer: fine) {
+  .detalle-servicio .img-shine:hover::after{
+    opacity: 1;
+    animation: shineSweepImg 1.05s ease-out 1;
+  }
 }
 
-/* MÓVIL: tap */
+/* MÓVIL: NO usamos :active porque es inconsistente (lo hace el JS) */
 .detalle-servicio .img-shine:active::after{
-  opacity: 1;
-  animation: shineSweepImg 1.05s ease-out 1;
+  /* vacío / opcional: lo dejamos sin animación */
 }
 
-/* ✅ IMPORTANTE: esto es lo que faltaba para que el JS funcione */
+/* ✅ Esto es lo que usa el JS para disparar el brillo en cualquier dispositivo */
 .detalle-servicio .img-shine.is-shining::after{
   opacity: 1;
   animation: shineSweepImg 1.05s ease-out 1;
 }
-
 @keyframes shineSweepImg{
   0%   { transform: translate(-35%, -35%); opacity: 0; }
   10%  { opacity: 1; }
@@ -1147,3 +1147,4 @@ img {
   margin: 0 !important;
   width: 100%;
 }
+
