@@ -1140,3 +1140,10 @@ img {
     animation: none !important;
   }
 }
+
+/* Evita doble sombra/margen en imágenes envueltas con .img-shine */
+.detalle-servicio .img-shine img{
+  box-shadow: none !important;
+  margin: 0 !important;
+  width: 100%;
+}
