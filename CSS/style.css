@@ -1157,3 +1157,32 @@ html, body {
   touch-action: pan-x pan-y pinch-zoom;
 }
 
+/* ===================================================== */
+/* DOBLE TOQUE = ZOOM EN IMÁGENES (.img-shine) */
+/* ===================================================== */
+
+.detalle-servicio .img-shine{
+  position: relative;
+  transform-origin: center center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  cursor: zoom-in;
+}
+
+/* Estado con zoom */
+.detalle-servicio .img-shine.is-zoomed{
+  transform: scale(1.9);
+  z-index: 50;
+  cursor: zoom-out;
+}
+
+/* Para que el zoom no quede recortado por el contenedor padre */
+.detalle-servicio{
+  overflow: visible;
+}
+
+/* En móvil: mejor gesto */
+@media (pointer: coarse){
+  .detalle-servicio .img-shine{
+    touch-action: pan-y pinch-zoom; /* permite scroll + pinch si el navegador lo soporta */
+  }
+}
