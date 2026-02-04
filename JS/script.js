@@ -14,10 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!entry.isIntersecting) return;
 
       const el = entry.target;
-
-      // Dispara el brillo
       el.classList.remove("is-shining");
-      void el.offsetWidth; // reflow para reiniciar animación
+      void el.offsetWidth; // reinicia animación
       el.classList.add("is-shining");
 
       setTimeout(() => el.classList.remove("is-shining"), 1200);
