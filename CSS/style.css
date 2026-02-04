@@ -1047,15 +1047,17 @@ img {
 
 /* ===== MICROCOPY BAJO BOTÓN WHATSAPP ===== */
 .microcopy-wsp {
-  margin-top: 6px;
-  font-size: 0.9rem;              /* un poco más fino */
+  margin-top: 8px;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.4px;          /* aire elegante entre letras */
-  color: #4b5563;                 /* gris moderno (no negro fuerte) */
+  letter-spacing: 0.5px;
+  color: #1f2937;                 /* gris más profundo */
   text-align: center;
+}
 
-  /* efecto sutil de presencia */
-  opacity: 0.9;
+.microcopy-wsp span {
+  color: #25D366;
+  font-weight: 700;
 }
 
 /* Detalle visual: separador suave */
@@ -1064,4 +1066,5 @@ img {
   color: #25D366;                 /* verde WhatsApp */
   font-weight: 700;
 }
+
 
