@@ -1067,4 +1067,68 @@ img {
   font-weight: 700;
 }
 
+/* ===================================================== */
+/* EFECTO SHINE EN IMÁGENES INTERNAS (SERVICIOS) */
+/* Se activa: hover (PC) + tap (móvil) */
+/* ===================================================== */
+
+/* Contenedor que envuelve la imagen */
+.img-shine {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;          /* recorta el brillo dentro del borde */
+  border-radius: 14px;       /* igual al estilo de .detalle-servicio img */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* La imagen adentro (sin romper tamaños existentes) */
+.img-shine img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Brillo */
+.img-shine::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0) 42%,
+    rgba(255,255,255,1) 50%,
+    rgba(255,255,255,0) 58%
+  );
+
+  mix-blend-mode: screen;
+  transform: translate(-35%, -35%);
+  opacity: 0;
+}
+
+/* ✅ PC: cuando pasas el mouse */
+.img-shine:hover::after {
+  opacity: 1;
+  animation: shineSweepImg 1.05s ease-out 1;
+}
+
+/* ✅ MÓVIL: cuando tocas */
+.img-shine:active::after {
+  opacity: 1;
+  animation: shineSweepImg 1.05s ease-out 1;
+}
+
+/* Animación para imágenes */
+@keyframes shineSweepImg {
+  0%   { transform: translate(-35%, -35%); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translate(35%, 35%); opacity: 0; }
+}
+
+/* Respeta reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .img-shine::after { animation: none !important; }
+}
 
