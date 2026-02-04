@@ -1045,12 +1045,23 @@ img {
     0 0 0 5px rgba(24, 119, 242, 0.22);
 }
 
-/* ===== MICROCOPY BAJO BOTÓN WHATSAPP (PÁGINAS INTERNAS) ===== */
-.microcopy-wsp{
-  margin: -12px auto 22px; /* queda pegadito al botón, sin mover diseño */
-  font-size: 0.92rem;
+/* ===== MICROCOPY BAJO BOTÓN WHATSAPP ===== */
+.microcopy-wsp {
+  margin-top: 6px;
+  font-size: 0.9rem;              /* un poco más fino */
   font-weight: 600;
-  color: #4b4b4b;
+  letter-spacing: 0.4px;          /* aire elegante entre letras */
+  color: #4b5563;                 /* gris moderno (no negro fuerte) */
   text-align: center;
-  max-width: 750px;
+
+  /* efecto sutil de presencia */
+  opacity: 0.9;
 }
+
+/* Detalle visual: separador suave */
+.microcopy-wsp::before {
+  content: "✓ ";
+  color: #25D366;                 /* verde WhatsApp */
+  font-weight: 700;
+}
+
