@@ -1083,7 +1083,7 @@ img {
 
 /* 🔹 FIX MOBILE: evita hover pegajoso */
 .detalle-servicio .img-shine{
-  touch-action: manipulation;
+  touch-action: pan-y pinch-zoom;
 }
 
 /* La imagen dentro: ocupa el contenedor */
@@ -1150,5 +1150,6 @@ img {
   margin: 0 !important;
   width: 100%;
 }
+
 
 
