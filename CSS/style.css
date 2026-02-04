@@ -1069,6 +1069,8 @@ img {
 
 /* ===================================================== */
 /* EFECTO SHINE EN IMÁGENES INTERNAS (SERVICIOS) */
+/* PC: hover + auto (JS) */
+/* MÓVIL: solo auto (JS) */
 /* ===================================================== */
 
 .detalle-servicio .img-shine{
@@ -1079,17 +1081,16 @@ img {
   max-width: 100%;
   width: 600px;
 
-  overflow: hidden; /* PC: recorta brillo */
+  overflow: hidden; /* recorta el brillo (PC y general) */
 }
 
-/* Imagen: AQUÍ vive el zoom */
 .detalle-servicio .img-shine img{
   display: block;
   width: 100%;
   height: auto;
   border-radius: 14px;
 
-  touch-action: pinch-zoom; /* ✅ habilita zoom real */
+  /* respeta tu diseño existente */
   box-shadow: none !important;
   margin: 0 !important;
 }
@@ -1113,7 +1114,7 @@ img {
   opacity: 0;
 }
 
-/* PC: hover real */
+/* PC: hover real (mouse) */
 @media (hover: hover) and (pointer: fine) {
   .detalle-servicio .img-shine:hover::after{
     opacity: 1;
@@ -1121,7 +1122,7 @@ img {
   }
 }
 
-/* JS: dispara brillo */
+/* JS: dispara brillo (PC + móvil, al entrar en pantalla) */
 .detalle-servicio .img-shine.is-shining::after{
   opacity: 1;
   animation: shineSweepImg 1.05s ease-out 1;
@@ -1133,56 +1134,9 @@ img {
   100% { transform: translate(35%, 35%); opacity: 0; }
 }
 
-/* Reduce motion */
+/* Respeta reduce motion */
 @media (prefers-reduced-motion: reduce){
   .detalle-servicio .img-shine::after{
     animation: none !important;
-  }
-}
-
-/* 📱 MÓVIL: permitir zoom normalmente */
-@media (pointer: coarse){
-  .detalle-servicio .img-shine{
-    overflow: visible; /* ✅ Android permite pinch-zoom */
-  }
-
-  /* Solo recortamos cuando corre el brillo */
-  .detalle-servicio .img-shine.is-shining{
-    overflow: hidden;
-  }
-}
-
-/* ✅ DESBLOQUEO GLOBAL DE PINCH-ZOOM (Android/Chrome) */
-html, body {
-  touch-action: pan-x pan-y pinch-zoom;
-}
-
-/* ===================================================== */
-/* DOBLE TOQUE = ZOOM EN IMÁGENES (.img-shine) */
-/* ===================================================== */
-
-.detalle-servicio .img-shine{
-  position: relative;
-  transform-origin: center center;
-  transition: transform 220ms ease, box-shadow 220ms ease;
-  cursor: zoom-in;
-}
-
-/* Estado con zoom */
-.detalle-servicio .img-shine.is-zoomed{
-  transform: scale(1.9);
-  z-index: 50;
-  cursor: zoom-out;
-}
-
-/* Para que el zoom no quede recortado por el contenedor padre */
-.detalle-servicio{
-  overflow: visible;
-}
-
-/* En móvil: mejor gesto */
-@media (pointer: coarse){
-  .detalle-servicio .img-shine{
-    touch-action: pan-y pinch-zoom; /* permite scroll + pinch si el navegador lo soporta */
   }
 }
