@@ -1218,3 +1218,41 @@ img {
 
 }
 
+/* ===================================================== */
+/* FIX DEFINITIVO: CONTENEDOR + BOTÓN CENTRADOS EN MÓVIL */
+/* ===================================================== */
+@media (max-width: 768px) {
+
+  /* 1️⃣ Contenedor blanco perfectamente centrado */
+  .detalle-servicio {
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    width: calc(100% - 24px);   /* evita desbordes */
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  /* 2️⃣ Botón WhatsApp REALMENTE centrado */
+  .btn-wsp-servicio {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    width: calc(100% - 24px);
+    max-width: 340px;
+
+    text-align: center;
+  }
+
+  /* 3️⃣ Microcopy alineado con el botón */
+  .microcopy-wsp {
+    width: 100%;
+    text-align: center;
+  }
+}
+
