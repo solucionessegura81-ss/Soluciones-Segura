@@ -1196,3 +1196,25 @@ img {
   }
 
 }
+
+/* ===================================================== */
+/* FIX: BOTÓN WHATSAPP PERFECTAMENTE CENTRADO (MÓVIL) */
+/* ===================================================== */
+@media (max-width: 768px) {
+
+  .btn-wsp-servicio {
+    display: flex;              /* mejor que inline-flex en móvil */
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;          /* fuerza centrado real */
+    margin-right: auto;
+
+    width: 100%;
+    max-width: 340px;
+
+    text-align: center;
+  }
+
+}
+
