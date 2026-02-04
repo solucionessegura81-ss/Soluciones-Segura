@@ -1230,3 +1230,51 @@ img {
     text-align: center;
   }
 }
+
+/* ===================================================== */
+/* FIX REAL: evitar desbordes + centrar contenedor + botón */
+/* ===================================================== */
+
+/* Evita que padding/márgenes rompan el ancho en móvil */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Quita scroll lateral si algún elemento se pasa */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 📱 MÓVIL: el cuadro blanco SIEMPRE centrado */
+@media (max-width: 768px) {
+  .detalle-servicio{
+    width: 100%;
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 34px 16px;   /* 🔥 clave: padding más pequeño en móvil */
+  }
+
+  /* Botón WhatsApp: ancho correcto y centrado */
+  .btn-wsp-servicio{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 420px;     /* no se sale del cuadro */
+    margin: 14px auto 16px;
+
+    padding: 14px 18px;
+    padding-left: 54px;   /* espacio para el icono */
+  }
+
+  /* Icono fuera del flujo (no empuja el texto) */
+  .btn-wsp-servicio i{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
