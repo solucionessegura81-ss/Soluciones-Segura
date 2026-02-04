@@ -1152,4 +1152,8 @@ img {
   }
 }
 
+/* ✅ DESBLOQUEO GLOBAL DE PINCH-ZOOM (Android/Chrome) */
+html, body {
+  touch-action: pan-x pan-y pinch-zoom;
+}
 
