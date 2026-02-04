@@ -8,7 +8,6 @@
   <meta name="description" content="Conoce quiénes somos en Soluciones Segura. Negocio local de soporte técnico informático en Costa Rica, comprometido con la calidad, la seguridad y precios justos.">
 
   <meta name="robots" content="index, follow">
-
   <link rel="canonical" href="https://solucionesseguracr.com/quienes-somos.html">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,9 +32,9 @@
 <body>
 
 <header class="header">
-  <img src="IMG/logo.png" alt="Soluciones Segura - Soporte Técnico Informático en Costa Rica">
+  <img src="IMG/logo.png"
+       alt="Soluciones Segura - Soporte Técnico Informático en Costa Rica">
 
-  <!-- H1 principal de la página -->
   <h1>Quiénes Somos</h1>
 
   <p>
@@ -45,37 +44,38 @@
 
 <section class="detalle-servicio">
 
-  <i class="fa-solid fa-shield-halved icono-servicio" aria-hidden="true"></i>
+  <!-- ICONO -->
+  <div class="icono-servicio" aria-hidden="true">
+    <i class="fa-solid fa-shield-halved"></i>
+  </div>
 
-  <!-- H2 semántico (no cambia visualmente) -->
   <h2>Soluciones Segura</h2>
 
-  <!-- ✅ TEXTO PULIDO (SIN REPETIR LAS FAQ) -->
-  <p>
+  <p class="texto-servicio">
     En <strong>Soluciones Segura</strong> somos un pequeño negocio local en Costa Rica enfocado en brindar
     <strong>soporte técnico informático</strong> con un trato cercano, profesional y responsable.
     Nuestro objetivo es que tengas la tranquilidad de dejar tu equipo en manos confiables.
   </p>
 
-  <p>
+  <p class="texto-servicio">
     Trabajamos con un enfoque claro: <strong>diagnóstico honesto</strong>, comunicación transparente y
     soluciones que realmente aporten valor. Nos importa tu información, tu tiempo y que tu computadora
     quede funcionando de forma estable para el trabajo, el estudio o el uso diario.
   </p>
 
-  <p>
+  <p class="texto-servicio">
     Nuestro compromiso se resume en una frase:
     <strong>Mantenimiento confiable con resultados seguros</strong>.
     Si buscas una opción responsable para resolver problemas informáticos, aquí estás en el lugar correcto.
   </p>
 
- <!-- ✅ ENLACE FACEBOOK (MISMO ESTILO QUE EL INDEX) -->
+  <!-- BOTÓN FACEBOOK -->
   <a class="btn-facebook"
-   href="https://www.facebook.com/profile.php?id=61581346506843"
-   target="_blank" rel="noopener">
-  <i class="fa-brands fa-facebook-f"></i> Ver nuestro trabajo en Facebook
-</a>
-  
+     href="https://www.facebook.com/profile.php?id=61581346506843"
+     target="_blank" rel="noopener">
+    <i class="fa-brands fa-facebook-f"></i> Ver nuestro trabajo en Facebook
+  </a>
+
   <h2 class="subtitulo-servicio">Preguntas frecuentes</h2>
 
   <div class="faq-accordion">
@@ -90,27 +90,26 @@
     <details>
       <summary>¿Qué tipo de clientes atienden?</summary>
       <div class="faq-content">
-        Atendemos estudiantes, profesionales, negocios pequeños y cualquier persona que necesite soporte técnico confiable.
+        Atendemos estudiantes, profesionales, pequeños negocios y usuarios domésticos.
       </div>
     </details>
 
     <details>
       <summary>¿Qué diferencia a Soluciones Segura de otros técnicos?</summary>
       <div class="faq-content">
-        Nuestro compromiso con la transparencia, la seguridad de la información y precios justos, además de un trato cercano y profesional.
+        La transparencia, el cuidado de la información, precios justos y un trato cercano y profesional.
       </div>
     </details>
 
     <details>
       <summary>¿Trabajan con citas o atención inmediata?</summary>
       <div class="faq-content">
-        Se puede coordinar atención mediante WhatsApp para brindar un servicio ordenado y eficiente.
+        Se coordina la atención por WhatsApp para ofrecer un servicio ordenado y eficiente.
       </div>
     </details>
 
   </div>
 
- <!-- ✅ BOTÓN VOLVER (IGUAL, AL FINAL) -->
   <a href="index.html" class="volver" aria-label="Volver a la página principal">
     ⬅ Volver a la página principal
   </a>
@@ -121,7 +120,7 @@
   <p>© 2026 Soluciones Segura | Soporte Técnico Informático en Costa Rica</p>
 </footer>
 
-<!-- 🔥 Schema.org – AboutPage -->
+<!-- Schema.org -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -142,7 +141,10 @@
     }
   }
 }
-<script src="JS/script.js?v=2"></script>
+</script>
+
+<!-- JS -->
+<script src="JS/script.js?v=4"></script>
+
 </body>
 </html>
-
