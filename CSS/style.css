@@ -21,7 +21,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -1278,5 +1278,6 @@ html, body {
     transform: translateY(-50%);
   }
 }
+
 
 
