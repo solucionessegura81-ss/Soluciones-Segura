@@ -31,10 +31,10 @@ body {
 }
 
 .header img {
-  width: 560px;      /* tamaño real del logo */
+  width: 600px;      /* tamaño real del logo */
   max-width: 95%;
   height: auto;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .header p {
@@ -1278,6 +1278,7 @@ html, body {
     transform: translateY(-50%);
   }
 }
+
 
 
 
