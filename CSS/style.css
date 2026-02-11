@@ -34,7 +34,7 @@ body {
   width: 600px;      /* tamaño real del logo */
   max-width: 95%;
   height: auto;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .header p {
@@ -1278,6 +1278,7 @@ html, body {
     transform: translateY(-50%);
   }
 }
+
 
 
 
