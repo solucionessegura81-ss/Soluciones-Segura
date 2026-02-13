@@ -1388,3 +1388,33 @@ html, body {
     display: block;
   }
 }
+
+/* ===== ASESORÍA PC: acabado PRO solo en PC ===== */
+@media (min-width: 769px){
+  .asesoria-pc{
+    background: #f1f3f5; /* igual a tu estética */
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  }
+}
+
+@media (min-width: 769px){
+  .asesoria-pc h2{
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+  }
+
+  .asesoria-pc p{
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .asesoria-pc__lista{
+    max-width: 780px;
+    margin: 0 auto 18px;
+    line-height: 1.75;
+  }
+}
+
+
