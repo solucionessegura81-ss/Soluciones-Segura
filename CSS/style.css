@@ -1278,3 +1278,61 @@ html, body {
     transform: translateY(-50%);
   }
 }
+
+/* ===== BLOQUE DESTACADO: ASESORÍA ARMAR PC ===== */
+.asesoria-pc{
+  max-width: 1300px;
+  margin: 10px auto 40px;
+  padding: 28px 22px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.asesoria-pc__icon{
+  font-size: 3.2rem;
+  color: #1f3c88;
+  margin-bottom: 10px;
+}
+
+.asesoria-pc h2{
+  margin: 0 0 10px;
+  font-size: 1.9rem;
+  color: #0a1f44;
+}
+
+.asesoria-pc p{
+  margin: 0 auto 14px;
+  max-width: 900px;
+  line-height: 1.7;
+  color: #2e2e2e;
+}
+
+.asesoria-pc__lista{
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 18px;
+  max-width: 900px;
+  display: grid;
+  gap: 10px;
+}
+
+.asesoria-pc__lista li{
+  background: rgba(31, 60, 136, 0.06);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #2e2e2e;
+}
+
+/* Móvil: compacto */
+@media (max-width: 768px){
+  .asesoria-pc{
+    margin: 0 auto 34px;
+    padding: 22px 16px;
+  }
+  .asesoria-pc h2{
+    font-size: 1.55rem;
+  }
+}
