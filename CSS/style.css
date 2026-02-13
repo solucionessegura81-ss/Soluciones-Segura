@@ -1676,3 +1676,87 @@ html, body {
     margin-top: 10px;
   }
 }
+
+/* ===================================================== */
+/* ASESORÍA PC – EXTRA + ANIMACIÓN SUAVE (PC + MÓVIL)     */
+/* ===================================================== */
+
+.asesoria-pc__extra{
+  display: flex;
+  justify-content: center;
+  margin: 14px auto 10px;
+}
+
+.asesoria-pc__badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, rgba(37,211,102,0.22), rgba(10,60,255,0.18));
+  border: 1px solid rgba(31,60,136,0.22);
+
+  color: #0a1f44;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,0.10),
+    0 0 0 4px rgba(37,211,102,0.08);
+
+  position: relative;
+  overflow: hidden; /* para el brillo */
+}
+
+.asesoria-pc__badge i{
+  color: #1f3c88;
+  font-size: 1.05rem;
+}
+
+/* Brillo sutil que cruza (muy suave) */
+.asesoria-pc__badge::after{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  pointer-events:none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0) 44%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0) 56%
+  );
+
+  mix-blend-mode: screen;
+  transform: translate(-35%, -35%);
+  opacity: 0;
+
+  animation: asesoriaBadgeShine 6.5s ease-in-out infinite;
+}
+
+/* Pulso MUY sutil (no mueve layout) */
+.asesoria-pc__badge{
+  animation: asesoriaBadgePulse 3.6s ease-in-out infinite;
+}
+
+@keyframes asesoriaBadgePulse{
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+}
+
+@keyframes asesoriaBadgeShine{
+  0% { transform: translate(-35%, -35%); opacity: 0; }
+  8% { opacity: 0.35; }
+  16% { transform: translate(35%, 35%); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Respeta “reducir movimiento” */
+@media (prefers-reduced-motion: reduce){
+  .asesoria-pc__badge,
+  .asesoria-pc__badge::after{
+    animation: none !important;
+  }
+}
