@@ -1336,3 +1336,55 @@ html, body {
     font-size: 1.55rem;
   }
 }
+
+/* ===== ASESORÍA PC: MÓVIL CON ACORDEÓN ===== */
+.asesoria-pc__acordeon{
+  display: none; /* oculto por defecto (PC) */
+  max-width: 900px;
+  margin: 0 auto 18px;
+  text-align: center;
+}
+
+.asesoria-pc__acordeon summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(31, 60, 136, 0.06);
+  border: 1px solid rgba(0,0,0,0.06);
+  font-weight: 900;
+  color: #0a1f44;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.asesoria-pc__acordeon summary::-webkit-details-marker{
+  display: none;
+}
+
+.asesoria-pc__acordeon summary::after{
+  content: "▾";
+  font-size: 1.1rem;
+  color: #1f3c88;
+  transition: transform 0.25s ease;
+}
+
+.asesoria-pc__acordeon[open] summary::after{
+  transform: rotate(180deg);
+}
+
+.asesoria-pc__acordeon-content{
+  margin-top: 10px;
+}
+
+/* En móvil: ocultar lista normal y mostrar acordeón */
+@media (max-width: 768px){
+  .asesoria-pc__incluye > .asesoria-pc__lista{
+    display: none;
+  }
+  .asesoria-pc__acordeon{
+    display: block;
+  }
+}
