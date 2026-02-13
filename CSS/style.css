@@ -1760,3 +1760,36 @@ html, body {
     animation: none !important;
   }
 }
+
+/* ===== Asesoría PC: micro-linea de confianza (conversión) ===== */
+.asesoria-pc__trust{
+  margin: 10px auto 16px;
+  max-width: 760px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #0a1f44;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.asesoria-pc__trust i{
+  color: #25D366;
+  font-size: 1.15rem;
+}
+
+.asesoria-pc__trust-strong{
+  color: #1f3c88;
+  font-weight: 900;
+}
+
+/* Móvil: un poquito más compacto */
+@media (max-width: 768px){
+  .asesoria-pc__trust{
+    font-size: 0.98rem;
+    line-height: 1.35;
+    gap: 8px;
+  }
+}
