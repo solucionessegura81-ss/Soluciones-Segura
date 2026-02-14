@@ -24,3 +24,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   shines.forEach((el) => observer.observe(el));
 });
+
+// =============================================
+// SHINE en cards (móvil): al tocar -> barrido
+// No bloquea el click, solo agrega clase y la quita
+// =============================================
+(function () {
+  const cards = document.querySelectorAll('.card');
+  if (!cards.length) return;
+
+  // Solo aplica en dispositivos touch (móvil/tablet)
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (!isTouchDevice) return;
+
+  let lastTouchTime = 0;
+
+  cards.forEach(card => {
+    card.addEventListener('touchstart', () => {
+      const now = Date.now();
+
+      // Evita dispararlo demasiadas veces mientras arrastrás
+      if (now - lastTouchTime < 220) return;
+      lastTouchTime = now;
+
+      card.classList.remove('is-shining'); // reinicia animación
+      // Forzar reflow para reiniciar el keyframes
+      void card.offsetWidth;
+      card.classList.add('is-shining');
+
+      // Quitar clase después del efecto
+      setTimeout(() => card.classList.remove('is-shining'), 1100);
+    }, { passive: true });
+  });
+})();
