@@ -1761,3 +1761,63 @@ html, body {
   }
 }
 
+/* ===================================================== */
+/* SHINE en títulos de servicios (card-text) */
+/* PC: hover  |  Móvil: clase .is-shining por JS */
+/* ===================================================== */
+
+.card .card-text{
+  position: relative;
+  overflow: hidden;          /* recorta el barrido dentro del texto */
+  border-radius: 10px;       /* suave, no cambia look */
+}
+
+/* Banda de luz */
+.card .card-text::after{
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 60%;
+  height: 180%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    115deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.95) 50%,
+    rgba(255,255,255,0) 100%
+  );
+
+  opacity: 0;
+  transform: translateX(0) skewX(-18deg);
+  mix-blend-mode: screen;
+}
+
+/* PC: solo hover real */
+@media (hover: hover) and (pointer: fine){
+  .card:hover .card-text::after{
+    opacity: 1;
+    animation: shineCardText 0.95s ease-out 1;
+  }
+}
+
+/* Móvil/JS: se dispara con clase */
+.card.is-shining .card-text::after{
+  opacity: 1;
+  animation: shineCardText 0.95s ease-out 1;
+}
+
+@keyframes shineCardText{
+  0%   { transform: translateX(0) skewX(-18deg); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translateX(260%) skewX(-18deg); opacity: 0; }
+}
+
+/* Respeta reducir movimiento */
+@media (prefers-reduced-motion: reduce){
+  .card .card-text::after{
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
