@@ -57,3 +57,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   });
 })();
+
+// =====================================================
+// SHINE en MÓVIL: cuando una card entra en pantalla (scroll)
+// =====================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  if (!isTouch) return; // Solo móvil / touch
+
+  const cards = document.querySelectorAll(".card");
+  if (!cards.length) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+
+        // Evita re-disparos seguidos
+        if (el.classList.contains("is-shining-text")) return;
+
+        el.classList.add("is-shining-text");
+
+        // Quitar clase luego del efecto
+        setTimeout(() => {
+          el.classList.remove("is-shining-text");
+        }, 1000);
+      });
+    },
+    { threshold: 0.55 } // se activa cuando la card está bastante visible
+  );
+
+  cards.forEach((c) => io.observe(c));
+});
