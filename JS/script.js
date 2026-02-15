@@ -59,35 +59,81 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // =====================================================
-// SHINE en MÓVIL: cuando una card entra en pantalla (scroll)
+// SHINE en MÓVIL: cuando el dedo pasa por una card mientras haces scroll
+// (no abre el link si estabas desplazándote)
 // =====================================================
 document.addEventListener("DOMContentLoaded", () => {
   const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-  if (!isTouch) return; // Solo móvil / touch
+  if (!isTouch) return;
 
-  const cards = document.querySelectorAll(".card");
+  const cards = Array.from(document.querySelectorAll(".card"));
   if (!cards.length) return;
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+  let moved = false;
+  let startX = 0;
+  let startY = 0;
 
-        const el = entry.target;
+  // Para evitar disparos repetidos en la misma card
+  let lastCard = null;
+  let lastTime = 0;
 
-        // Evita re-disparos seguidos
-        if (el.classList.contains("is-shining-text")) return;
+  // Evita que se abra el link si fue un gesto de scroll sobre una card
+  const blockClickOnce = (card) => {
+    card.dataset.blockClickOnce = "1";
+    setTimeout(() => { delete card.dataset.blockClickOnce; }, 350);
+  };
 
-        el.classList.add("is-shining-text");
+  // Bloquea el click SOLO si venías haciendo scroll
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (card.dataset.blockClickOnce === "1") {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  });
 
-        // Quitar clase luego del efecto
-        setTimeout(() => {
-          el.classList.remove("is-shining-text");
-        }, 1000);
-      });
-    },
-    { threshold: 0.55 } // se activa cuando la card está bastante visible
-  );
+  const triggerShine = (card) => {
+    const now = Date.now();
+    // Anti-spam (misma card muy seguido)
+    if (card === lastCard && now - lastTime < 450) return;
 
-  cards.forEach((c) => io.observe(c));
+    lastCard = card;
+    lastTime = now;
+
+    card.classList.add("is-shining-text");
+    setTimeout(() => card.classList.remove("is-shining-text"), 900);
+  };
+
+  const cardFromPoint = (x, y) => {
+    const el = document.elementFromPoint(x, y);
+    if (!el) return null;
+    return el.closest ? el.closest(".card") : null;
+  };
+
+  document.addEventListener("touchstart", (e) => {
+    moved = false;
+    const t = e.touches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+  }, { passive: true });
+
+  document.addEventListener("touchmove", (e) => {
+    const t = e.touches[0];
+    const dx = Math.abs(t.clientX - startX);
+    const dy = Math.abs(t.clientY - startY);
+
+    // Si se movió lo suficiente, es scroll (no tap)
+    if (dx > 6 || dy > 6) moved = true;
+
+    if (!moved) return;
+
+    const card = cardFromPoint(t.clientX, t.clientY);
+    if (!card) return;
+
+    // Dispara brillo y bloquea apertura del link en este gesto de scroll
+    triggerShine(card);
+    blockClickOnce(card);
+  }, { passive: true });
+
 });
