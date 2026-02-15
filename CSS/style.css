@@ -1833,6 +1833,7 @@ html, body {
   position: relative;
   overflow: hidden;            /* recorta el barrido */
   isolation: isolate;          /* asegura mezcla del brillo */
+  transform: translateZ(0);    /* suaviza en algunos móviles */
   will-change: transform;
 }
 
@@ -1860,28 +1861,29 @@ html, body {
   mix-blend-mode: screen;
 
   /* Se activa “solo” cada X segundos */
-  animation: btnShineSweep 4.5s ease-out infinite;
+  animation: btnShineSweep 3.6s ease-out infinite;
 }
 
-/* Pulso sutil (acercamiento/alejamiento) */
+/* Pulso MUY suave (fluido, no robótico) */
 .detalle-servicio .btn-wsp-servicio,
 .detalle-servicio .btn-facebook{
-  animation: btnPulse 4.5s ease-in-out infinite;
+  animation: btnPulseSmooth 3.6s cubic-bezier(.22,.61,.36,1) infinite;
 }
 
 /* Barrido: la mayor parte del tiempo está apagado */
 @keyframes btnShineSweep{
-  0%, 78%   { opacity: 0; transform: translateX(0) skewX(-18deg); }
-  80%       { opacity: 1; }
-  92%       { opacity: 0; transform: translateX(280%) skewX(-18deg); }
+  0%, 72%   { opacity: 0; transform: translateX(0) skewX(-18deg); }
+  76%       { opacity: 1; }
+  90%       { opacity: 0; transform: translateX(280%) skewX(-18deg); }
   100%      { opacity: 0; transform: translateX(280%) skewX(-18deg); }
 }
 
-/* Pulso sincronizado con el barrido */
-@keyframes btnPulse{
-  0%, 75%   { transform: scale(1); }
-  80%       { transform: scale(1.02); }
-  88%       { transform: scale(1); }
+/* Pulso más “orgánico” (sube y baja suave) */
+@keyframes btnPulseSmooth{
+  0%, 70%   { transform: scale(1); }
+  76%       { transform: scale(1.014); }
+  83%       { transform: scale(1.008); }
+  92%       { transform: scale(1); }
   100%      { transform: scale(1); }
 }
 
