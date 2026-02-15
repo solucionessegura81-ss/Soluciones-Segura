@@ -1864,3 +1864,12 @@ html, body {
   10%  { opacity: 1; }
   100% { transform: translate(35%, 35%); opacity: 0; }
 }
+
+/* ===================================================== */
+/* SHINE EN MÓVIL: al entrar en pantalla (clase JS) */
+/* ===================================================== */
+
+.card.is-shining-text .card-text::after{
+  opacity: 1;
+  animation: shineSweepCardText 0.95s ease-out 1;
+}
