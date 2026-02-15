@@ -236,15 +236,13 @@ footer {
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
+
   .servicios {
     grid-template-columns: 1fr;   /* una columna */
     max-width: 420px;
     margin: 0 auto;              /* centra el contenedor */
     justify-items: center;       /* centra las cards */
-  .header {
-    background-position: center 20%;
   }
-}
 
   .card {
     width: 100%;                 /* ocupa el ancho del grid */
@@ -256,10 +254,10 @@ footer {
     max-width: 300px;            /* ✅ tamaño correcto en móvil */
   }
 
- /* Ajuste SOLO móvil: re-encuadrar la imagen del header */
-  .header{
+  /* Ajuste SOLO móvil: re-encuadrar la imagen del header */
+  .header {
     background-position: center 25%;
-  } 
+  }
 }
 
 /* ===== TITULO SERVICIOS PRO ===== */
@@ -1896,3 +1894,4 @@ html, body {
     outline: 6px solid lime !important;
   }
 }
+
