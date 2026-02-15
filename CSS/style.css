@@ -241,7 +241,10 @@ footer {
     max-width: 420px;
     margin: 0 auto;              /* centra el contenedor */
     justify-items: center;       /* centra las cards */
+  .header {
+    background-position: center 30%;
   }
+}
 
   .card {
     width: 100%;                 /* ocupa el ancho del grid */
@@ -1886,6 +1889,7 @@ html, body {
     opacity: 0 !important;
   }
 }
+
 
 
 
