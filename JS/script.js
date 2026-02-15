@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // =====================================================
-// SHINE en MÓVIL: cuando el dedo pasa por una card mientras haces scroll
-// (no abre el link si estabas desplazándote)
+// SHINE en MÓVIL: SOLO si tocas una card mientras vienes haciendo scroll
+// (no abre el link en ese toque)
 // =====================================================
 document.addEventListener("DOMContentLoaded", () => {
   const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
@@ -69,33 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = Array.from(document.querySelectorAll(".card"));
   if (!cards.length) return;
 
-  let moved = false;
-  let startX = 0;
-  let startY = 0;
+  // Detecta si el usuario viene haciendo scroll recientemente
+  let recentlyScrolling = false;
+  let scrollTimer = null;
 
-  // Para evitar disparos repetidos en la misma card
+  window.addEventListener("scroll", () => {
+    recentlyScrolling = true;
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      recentlyScrolling = false;
+    }, 220); // ventana corta: "vengo bajando"
+  }, { passive: true });
+
+  // Anti-spam (no repetir brillo demasiado seguido en la misma card)
   let lastCard = null;
   let lastTime = 0;
 
-  // Evita que se abra el link si fue un gesto de scroll sobre una card
-  const blockClickOnce = (card) => {
-    card.dataset.blockClickOnce = "1";
-    setTimeout(() => { delete card.dataset.blockClickOnce; }, 350);
-  };
-
-  // Bloquea el click SOLO si venías haciendo scroll
-  cards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      if (card.dataset.blockClickOnce === "1") {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }, true);
-  });
-
   const triggerShine = (card) => {
     const now = Date.now();
-    // Anti-spam (misma card muy seguido)
     if (card === lastCard && now - lastTime < 450) return;
 
     lastCard = card;
@@ -105,35 +96,26 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => card.classList.remove("is-shining-text"), 900);
   };
 
-  const cardFromPoint = (x, y) => {
-    const el = document.elementFromPoint(x, y);
-    if (!el) return null;
-    return el.closest ? el.closest(".card") : null;
+  // Bloquear apertura SOLO en ese toque "mientras bajaba"
+  const blockClickOnce = (card) => {
+    card.dataset.blockClickOnce = "1";
+    setTimeout(() => { delete card.dataset.blockClickOnce; }, 350);
   };
 
-  document.addEventListener("touchstart", (e) => {
-    moved = false;
-    const t = e.touches[0];
-    startX = t.clientX;
-    startY = t.clientY;
-  }, { passive: true });
+  cards.forEach((card) => {
+    // Si tocas una card mientras vienes scrolleando -> brillo + no entrar
+    card.addEventListener("touchstart", () => {
+      if (!recentlyScrolling) return;  // ✅ si no vienes bajando, no hace nada
+      triggerShine(card);
+      blockClickOnce(card);
+    }, { passive: true });
 
-  document.addEventListener("touchmove", (e) => {
-    const t = e.touches[0];
-    const dx = Math.abs(t.clientX - startX);
-    const dy = Math.abs(t.clientY - startY);
-
-    // Si se movió lo suficiente, es scroll (no tap)
-    if (dx > 6 || dy > 6) moved = true;
-
-    if (!moved) return;
-
-    const card = cardFromPoint(t.clientX, t.clientY);
-    if (!card) return;
-
-    // Dispara brillo y bloquea apertura del link en este gesto de scroll
-    triggerShine(card);
-    blockClickOnce(card);
-  }, { passive: true });
-
+    // Evita entrar SOLO cuando el toque fue bloqueado
+    card.addEventListener("click", (e) => {
+      if (card.dataset.blockClickOnce === "1") {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  });
 });
