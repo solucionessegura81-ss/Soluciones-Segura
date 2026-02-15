@@ -760,10 +760,12 @@ footer {
     letter-spacing: 0.5px;
   }
 
-  /* Ajuste real móvil del fondo */
-.header {
-  background-size: 150% auto !important;
-  background-position: center 25% !important;
+  /* ===== AJUSTE REAL SOLO MÓVIL ===== */
+@media (max-width: 768px) {
+  .header {
+    background-size: cover !important;
+    background-position: center 45% !important;
+  }
 }
 
   .ubicacion h2 {
@@ -879,4 +881,5 @@ button:focus-visible,
 img { display: block; max-width: 100%; height: auto; }
 .card:active { transform: scale(0.98); }
 .whatsapp:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.25); }
+
 
