@@ -1929,6 +1929,12 @@ html, body {
   }
 }
 
+/* TEST 5A: confirmar que el selector llega a las 3 cajas */
+.asesoria-pc .asesoria-pc__lista li{
+  outline: 4px solid fuchsia !important;
+  text-align: center !important;
+}
+
 /* ✅ FIX SOLO PC: forzar que la lista de Asesoría PC sea 3 columnas */
 @media (min-width: 769px){
   .asesoria-pc .asesoria-pc__incluye > .asesoria-pc__lista{
@@ -1978,6 +1984,7 @@ html, body {
   outline: 4px solid red !important;
   text-align: center !important;
 }
+
 
 
 
