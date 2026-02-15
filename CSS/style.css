@@ -1937,7 +1937,13 @@ html, body {
     margin: 18px auto 0 !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 24px !important;
+
+    @media (min-width: 769px){
+  .asesoria-pc .asesoria-pc__lista li{
+    text-align: center !important;
   }
 }
+
+
 
 
