@@ -1860,13 +1860,13 @@ html, body {
   mix-blend-mode: screen;
 
   /* Se activa “solo” cada X segundos */
-  animation: btnShineSweep 6.5s ease-out infinite;
+  animation: btnShineSweep 4.5s ease-out infinite;
 }
 
 /* Pulso sutil (acercamiento/alejamiento) */
 .detalle-servicio .btn-wsp-servicio,
 .detalle-servicio .btn-facebook{
-  animation: btnPulse 6.5s ease-in-out infinite;
+  animation: btnPulse 4.5s ease-in-out infinite;
 }
 
 /* Barrido: la mayor parte del tiempo está apagado */
@@ -1879,9 +1879,9 @@ html, body {
 
 /* Pulso sincronizado con el barrido */
 @keyframes btnPulse{
-  0%, 78%   { transform: scale(1); }
-  83%       { transform: scale(1.035); }
-  90%       { transform: scale(1); }
+  0%, 75%   { transform: scale(1); }
+  80%       { transform: scale(1.02); }
+  88%       { transform: scale(1); }
   100%      { transform: scale(1); }
 }
 
@@ -1897,3 +1897,4 @@ html, body {
     opacity: 0 !important;
   }
 }
+
