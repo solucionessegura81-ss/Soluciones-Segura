@@ -1924,9 +1924,20 @@ html, body {
   }
 }
 
-body{
-  background: blue !important;
-}
+@media (min-width: 769px){
+  .asesoria-pc .asesoria-pc__incluye{
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 
+  .asesoria-pc .asesoria-pc__lista{
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 18px auto 0 !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+}
 
 
