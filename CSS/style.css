@@ -1944,6 +1944,18 @@ html, body {
   }
 }
 
+/* ✅ FIX SOLO PC: centrar texto REAL en las 3 cajas de asesoría */
+@media (min-width: 769px){
+  .asesoria-pc .asesoria-pc__lista > li{
+    text-align: center !important;
+  }
+
+  /* el ✓ es el que “jala” el texto a la izquierda, lo pasamos arriba */
+  .asesoria-pc .asesoria-pc__lista > li::before{
+    display: block !important;
+    margin: 0 auto 8px !important;  /* centrado y con espacio abajo */
+  }
+}
 
 
 
