@@ -121,7 +121,7 @@ body {
   background-image: url("../IMG/mant.png");
 }
 
-reemplazo::before {
+.card.reemplazo::before {
   background-image: url("../IMG/reemp.png");
 }
 
