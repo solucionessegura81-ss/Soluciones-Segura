@@ -882,4 +882,37 @@ img { display: block; max-width: 100%; height: auto; }
 .card:active { transform: scale(0.98); }
 .whatsapp:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.25); }
 
+/* ===== RESTORE EFECTO BADGE ASESORIA (NO ROMPE NADA) ===== */
+
+.asesoria-pc__badge{
+  position: relative;
+  overflow: hidden;
+}
+
+.asesoria-pc__badge::after{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  pointer-events:none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0) 44%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0) 56%
+  );
+
+  mix-blend-mode: screen;
+  transform: translate(-35%, -35%);
+  opacity: 0;
+
+  animation: restoreBadgeShine 5.5s ease-in-out infinite;
+}
+
+@keyframes restoreBadgeShine{
+  0% { transform: translate(-35%, -35%); opacity: 0; }
+  10% { opacity: 0.45; }
+  22% { transform: translate(35%, 35%); opacity: 0; }
+  100% { opacity: 0; }
+}
 
