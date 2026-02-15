@@ -971,11 +971,6 @@ img {
   }
 }
 
-/*  4A: marcador más abajo */
-.microcopy-wsp{
-  outline: 4px solid orange !important;
-}
-
 /* ===== EFECTO REFLEJO (SHINE) EN HEADER ===== */
 .header{
   position: relative;
@@ -1974,9 +1969,9 @@ html, body {
 
 /* TEST 1: si esto NO cambia, el selector NO está aplicando o no estás viendo ese HTML */
 .asesoria-pc .asesoria-pc__lista li{
-  outline: 4px solid red !important;
-  text-align: center !important;
+    text-align: center !important;
 }
+
 
 
 
