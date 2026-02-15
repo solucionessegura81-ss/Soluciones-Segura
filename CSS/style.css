@@ -1913,6 +1913,22 @@ html, body {
   }
 }
 
+/* =============================== */
+/* FIX PC: lista Asesoría a lo ancho */
+/* (no afecta móvil)               */
+/* =============================== */
+@media (min-width: 769px){
+  .asesoria-pc .asesoria-pc__lista{
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .asesoria-pc .asesoria-pc__lista li{
+    height: 100%;
+  }
+}
 
 
 
