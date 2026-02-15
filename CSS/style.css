@@ -252,6 +252,11 @@ footer {
   .header img {
     max-width: 300px;            /* ✅ tamaño correcto en móvil */
   }
+
+ /* Ajuste SOLO móvil: re-encuadrar la imagen del header */
+  .header{
+    background-position: center 25%;
+  } 
 }
 
 /* ===== TITULO SERVICIOS PRO ===== */
@@ -1881,5 +1886,6 @@ html, body {
     opacity: 0 !important;
   }
 }
+
 
 
