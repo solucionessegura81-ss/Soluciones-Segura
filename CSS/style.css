@@ -1325,10 +1325,14 @@ html, body {
 .asesoria-pc__lista{
   list-style: none;
   padding: 0;
-  margin: 0 auto 18px;
-  max-width: 900px;
+  margin: 18px 0 0;
+
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  width: 100%;
+  max-width: 100%;
 }
 
 .asesoria-pc__lista li{
@@ -1893,6 +1897,7 @@ html, body {
     opacity: 0 !important;
   }
 }
+
 
 
 
