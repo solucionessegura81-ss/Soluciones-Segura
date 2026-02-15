@@ -954,21 +954,20 @@ img {
   }
 }
 
-/* ===== EFECTO REFLEJO (SHINE) EN HEADER: 1 SOLA VEZ ===== */
+/* ===== EFECTO REFLEJO (SHINE) EN HEADER ===== */
 .header{
   position: relative;
   overflow: hidden; /* recorta el brillo dentro del header */
 }
 
-/* Brillo que cruza de arriba-izq -> abajo-der */
+/* Brillo preparado (NO se ejecuta solo) */
 .header::after{
   content:"";
   position:absolute;
-  inset:-40%; /* más grande para que cubra todo al pasar */
-  z-index: 2; /* arriba del overlay oscuro */
+  inset:-40%; /* más grande para cubrir todo al pasar */
+  z-index: 2;
   pointer-events:none;
 
-  /* Banda brillante inclinada */
   background: linear-gradient(
     135deg,
     rgba(255,255,255,0) 42%,
@@ -976,16 +975,18 @@ img {
     rgba(255,255,255,0) 58%
   );
 
-  /* Hace que se vea como luz real, no como neblina */
   mix-blend-mode: screen;
 
-  /* Empieza fuera del header */
   transform: translate(-35%, -35%);
   opacity: 0;
 
-  /* SOLO UNA VEZ */
+  /* ❌ Quitamos la animación automática */
+  animation: none;
+}
+
+/* ✅ La animación solo se activa cuando JS agrega esta clase */
+.header.is-shining::after{
   animation: shineSweep 1.25s ease-out 1;
-  animation-fill-mode: forwards;
 }
 
 /* Asegura que texto y logo queden arriba del brillo */
@@ -1880,4 +1881,5 @@ html, body {
     opacity: 0 !important;
   }
 }
+
 
