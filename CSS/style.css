@@ -1823,9 +1823,10 @@ html, body {
 }
 
 /* ===================================================== */
-/* AUTO SHINE + PULSO (solo páginas internas)            */
+/* AUTO SHINE (solo páginas internas)                    */
 /* Botones: WhatsApp por servicio + Facebook (Quiénes)   */
-/* No cambia colores ni formas                            */
+/* Sin pulso / sin movimiento: solo barrido de luz       */
+/* No cambia colores ni formas                           */
 /* ===================================================== */
 
 .detalle-servicio .btn-wsp-servicio,
@@ -1833,8 +1834,7 @@ html, body {
   position: relative;
   overflow: hidden;            /* recorta el barrido */
   isolation: isolate;          /* asegura mezcla del brillo */
-  transform: translateZ(0);    /* suaviza en algunos móviles */
-  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Banda de luz (barrido) */
@@ -1860,43 +1860,23 @@ html, body {
   transform: translateX(0) skewX(-18deg);
   mix-blend-mode: screen;
 
-  /* Se activa “solo” cada X segundos */
-  animation: btnShineSweep 3.6s ease-out infinite;
+  /* Se activa solo cada X segundos */
+  animation: btnShineSweepOnly 3.2s ease-out infinite;
 }
 
-/* Pulso MUY suave (fluido, no robótico) */
-.detalle-servicio .btn-wsp-servicio,
-.detalle-servicio .btn-facebook{
-  animation: btnPulseSmooth 3.6s cubic-bezier(.22,.61,.36,1) infinite;
-}
-
-/* Barrido: la mayor parte del tiempo está apagado */
-@keyframes btnShineSweep{
-  0%, 72%   { opacity: 0; transform: translateX(0) skewX(-18deg); }
-  76%       { opacity: 1; }
-  90%       { opacity: 0; transform: translateX(280%) skewX(-18deg); }
+/* Barrido: la mayor parte del tiempo apagado */
+@keyframes btnShineSweepOnly{
+  0%, 74%   { opacity: 0; transform: translateX(0) skewX(-18deg); }
+  78%       { opacity: 1; }
+  92%       { opacity: 0; transform: translateX(280%) skewX(-18deg); }
   100%      { opacity: 0; transform: translateX(280%) skewX(-18deg); }
-}
-
-/* Pulso más “orgánico” (sube y baja suave) */
-@keyframes btnPulseSmooth{
-  0%, 70%   { transform: scale(1); }
-  76%       { transform: scale(1.014); }
-  83%       { transform: scale(1.008); }
-  92%       { transform: scale(1); }
-  100%      { transform: scale(1); }
 }
 
 /* Respeta "reducir movimiento" */
 @media (prefers-reduced-motion: reduce){
-  .detalle-servicio .btn-wsp-servicio,
-  .detalle-servicio .btn-facebook{
-    animation: none !important;
-  }
   .detalle-servicio .btn-wsp-servicio::after,
   .detalle-servicio .btn-facebook::after{
     animation: none !important;
     opacity: 0 !important;
   }
 }
-
