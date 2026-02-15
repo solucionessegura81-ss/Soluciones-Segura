@@ -256,7 +256,7 @@ footer {
 
   /* Ajuste SOLO móvil: re-encuadrar la imagen del header */
   .header {
-    background-position: center 25%;
+    background-position: center 15%;
   }
 }
 
@@ -1894,4 +1894,5 @@ html, body {
     outline: 6px solid lime !important;
   }
 }
+
 
