@@ -8,7 +8,7 @@ body {
 /* ===== HEADER ===== */
 .header {
   position: relative;
-  background-image: url("../IMG/fondo1.png");
+  background-image: url("../IMG/fondo1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1880,3 +1880,4 @@ html, body {
     opacity: 0 !important;
   }
 }
+
