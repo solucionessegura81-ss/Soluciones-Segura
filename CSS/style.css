@@ -125,27 +125,27 @@ body {
   background-image: url("../IMG/reemp.png");
 }
 
-software::before {
+.card.software::before {
   background-image: url("../IMG/soft.png");
 }
 
-formateo::before {
+.card.formateo::before {
   background-image: url("../IMG/format.png");
 }
 
-virus::before {
+.card.virus::before {
   background-image: url("../IMG/vir.png");
 }
 
-respaldo::before {
+.card.respaldo::before {
   background-image: url("../IMG/respald.png");
 }
 
-nuevo::before {
+.card.nuevo::before {
   background-image: url("../IMG/new.png");
 }
 
-hardware::before {
+.card.hardware::before {
   background-image: url("../IMG/hardw.png");
 }
 
@@ -1966,6 +1966,7 @@ html, body {
 .asesoria-pc .asesoria-pc__lista li{
     text-align: center !important;
 }
+
 
 
 
