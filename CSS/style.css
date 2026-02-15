@@ -1913,17 +1913,16 @@ html, body {
   }
 }
 
-/* ✅ SOLO PC: distribuir las 3 frases a lo ancho (sin afectar móvil ni otros estilos) */
+/* ✅ FIX SOLO PC: forzar que la lista de Asesoría PC sea 3 columnas */
 @media (min-width: 769px){
-  .asesoria-pc .asesoria-pc__incluye > ul.asesoria-pc__lista{
+  .asesoria-pc .asesoria-pc__incluye > .asesoria-pc__lista{
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 20px !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 18px auto 0 !important;
   }
 }
+
 
 
