@@ -272,7 +272,7 @@ footer {
   }
 }
 
-/* TEST 3A: marcador intermedio */
+/*  3A: marcador intermedio */
 .card{
   outline: 4px solid dodgerblue !important;
 }
@@ -977,7 +977,7 @@ img {
   }
 }
 
-/* TEST 4A: marcador más abajo */
+/*  4A: marcador más abajo */
 .microcopy-wsp{
   outline: 4px solid orange !important;
 }
@@ -1929,9 +1929,8 @@ html, body {
   }
 }
 
-/* TEST 5A: confirmar que el selector llega a las 3 cajas */
+/* FIX FINAL: centrar texto dentro de las 3 cajas (solo Asesoría PC) */
 .asesoria-pc .asesoria-pc__lista li{
-  outline: 4px solid fuchsia !important;
   text-align: center !important;
 }
 
@@ -1984,6 +1983,7 @@ html, body {
   outline: 4px solid red !important;
   text-align: center !important;
 }
+
 
 
 
