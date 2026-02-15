@@ -1913,24 +1913,17 @@ html, body {
   }
 }
 
-/* =============================== */
-/* FIX PC: lista Asesoría a lo ancho */
-/* (no afecta móvil)               */
-/* =============================== */
+/* ✅ SOLO PC: distribuir las 3 frases a lo ancho (sin afectar móvil ni otros estilos) */
 @media (min-width: 769px){
-  .asesoria-pc .asesoria-pc__lista{
-    width: 100%;
-    max-width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-  }
-
-  .asesoria-pc .asesoria-pc__lista li{
-    height: 100%;
+  .asesoria-pc .asesoria-pc__incluye > ul.asesoria-pc__lista{
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
-
-
-
 
 
