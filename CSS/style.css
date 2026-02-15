@@ -242,7 +242,7 @@ footer {
     margin: 0 auto;              /* centra el contenedor */
     justify-items: center;       /* centra las cards */
   .header {
-    background-position: center 30%;
+    background-position: center 20%;
   }
 }
 
@@ -1889,6 +1889,7 @@ html, body {
     opacity: 0 !important;
   }
 }
+
 
 
 
