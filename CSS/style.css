@@ -272,6 +272,11 @@ footer {
   }
 }
 
+/* TEST 3A: marcador intermedio */
+.card{
+  outline: 4px solid dodgerblue !important;
+}
+
 /* ===== TITULO SERVICIOS PRO ===== */
 .titulo-servicios {
   width: 100%;
@@ -1968,6 +1973,7 @@ html, body {
   outline: 4px solid red !important;
   text-align: center !important;
 }
+
 
 
 
