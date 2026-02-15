@@ -119,3 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, true);
   });
 });
+
+// ===== Shine del HEADER al cargar (móvil y PC) =====
+window.addEventListener("load", () => {
+  const header = document.querySelector(".header");
+  if (!header) return;
+
+  // Dispara el efecto después de que ya cargó la imagen y fuentes
+  setTimeout(() => {
+    header.classList.add("is-shining");
+
+    // Limpia la clase para que pueda volver a dispararse si recargas
+    setTimeout(() => header.classList.remove("is-shining"), 1400);
+  }, 250);
+});
