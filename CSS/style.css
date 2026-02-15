@@ -121,31 +121,31 @@ body {
   background-image: url("../IMG/mant.png");
 }
 
-.card.reemplazo::before {
+reemplazo::before {
   background-image: url("../IMG/reemp.png");
 }
 
-.card.software::before {
+software::before {
   background-image: url("../IMG/soft.png");
 }
 
-.card.formateo::before {
+formateo::before {
   background-image: url("../IMG/format.png");
 }
 
-.card.virus::before {
+virus::before {
   background-image: url("../IMG/vir.png");
 }
 
-.card.respaldo::before {
+respaldo::before {
   background-image: url("../IMG/respald.png");
 }
 
-.card.nuevo::before {
+nuevo::before {
   background-image: url("../IMG/new.png");
 }
 
-.card.hardware::before {
+hardware::before {
   background-image: url("../IMG/hardw.png");
 }
 
@@ -264,11 +264,6 @@ footer {
   .header {
     background-position: center 15%;
   }
-}
-
-/*  3A: marcador intermedio */
-.card{
-  outline: 4px solid dodgerblue !important;
 }
 
 /* ===== TITULO SERVICIOS PRO ===== */
@@ -1971,6 +1966,7 @@ html, body {
 .asesoria-pc .asesoria-pc__lista li{
     text-align: center !important;
 }
+
 
 
 
