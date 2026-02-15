@@ -237,6 +237,12 @@ footer {
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
 
+  .header {
+    background-image: url("../IMG/fondo1-mobile.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+  
   .servicios {
     grid-template-columns: 1fr;   /* una columna */
     max-width: 420px;
@@ -1887,6 +1893,7 @@ html, body {
     opacity: 0 !important;
   }
 }
+
 
 
 
