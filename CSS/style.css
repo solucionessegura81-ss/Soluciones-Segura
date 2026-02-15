@@ -5,12 +5,6 @@ body {
   background: #f1f3f5;
 }
 
-/* TEST 2: si aquí SÍ aparece, el problema es que el CSS se “rompe” más abajo */
-.asesoria-pc .asesoria-pc__lista li{
-  outline: 4px solid red !important;
-  text-align: center !important;
-}
-
 /* ===== HEADER ===== */
 .header {
   position: relative;
@@ -1983,6 +1977,7 @@ html, body {
   outline: 4px solid red !important;
   text-align: center !important;
 }
+
 
 
 
