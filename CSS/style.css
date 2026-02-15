@@ -1821,3 +1821,46 @@ html, body {
     opacity: 0 !important;
   }
 }
+
+/* ===================================================== */
+/* SHINE SOLO EN PC: texto de los servicios (hover) */
+/* ===================================================== */
+
+/* Preparar el texto para poder mostrar el brillo encima */
+.card .card-text{
+  position: relative;
+  overflow: hidden; /* recorta el brillo al ancho del texto */
+}
+
+/* La “luz” que barre */
+.card .card-text::after{
+  content: "";
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0) 42%,
+    rgba(255,255,255,0.95) 50%,
+    rgba(255,255,255,0) 58%
+  );
+
+  mix-blend-mode: screen;
+  transform: translate(-35%, -35%);
+  opacity: 0;
+}
+
+/* SOLO PC (mouse): se activa cuando el cursor pasa por el servicio */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card-text::after{
+    opacity: 1;
+    animation: shineSweepCardText 0.95s ease-out 1;
+  }
+}
+
+@keyframes shineSweepCardText{
+  0%   { transform: translate(-35%, -35%); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translate(35%, 35%); opacity: 0; }
+}
