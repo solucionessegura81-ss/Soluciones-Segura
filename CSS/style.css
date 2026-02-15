@@ -977,6 +977,11 @@ img {
   }
 }
 
+/* TEST 4A: marcador más abajo */
+.microcopy-wsp{
+  outline: 4px solid orange !important;
+}
+
 /* ===== EFECTO REFLEJO (SHINE) EN HEADER ===== */
 .header{
   position: relative;
@@ -1973,6 +1978,7 @@ html, body {
   outline: 4px solid red !important;
   text-align: center !important;
 }
+
 
 
 
