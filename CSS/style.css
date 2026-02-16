@@ -2091,3 +2091,32 @@ html, body {
   }
 
 }
+
+/* ===== FIX DEFINITIVO: Botón WhatsApp centrado en PÁGINAS INTERNAS (SOLO MÓVIL) ===== */
+@media (max-width: 768px){
+
+  /* Captura cualquier botón/link que lleve a WhatsApp dentro de la página del servicio */
+  .detalle-servicio a[href*="wa.me"],
+  .detalle-servicio a[href*="whatsapp"]{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    padding-left: 22px !important;   /* anula padding-left raros */
+    padding-right: 22px !important;
+
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Si el icono está con position absolute por otro bloque, lo neutraliza */
+  .detalle-servicio a[href*="wa.me"] i,
+  .detalle-servicio a[href*="whatsapp"] i{
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
