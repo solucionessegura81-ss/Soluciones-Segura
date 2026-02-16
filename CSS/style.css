@@ -2066,4 +2066,29 @@ html, body {
   }
 }
 
+/* ✅ FIX ÚNICO — SOLO MÓVIL — SOLO PÁGINAS INTERNAS (SERVICIOS)
+   Centra el botón WhatsApp (icono + texto en 1 línea) sin afectar PC ni otras secciones */
+@media (max-width: 768px){
+  .detalle-servicio .btn-wsp-servicio{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    max-width: 340px !important;
+    margin: 14px auto 16px !important;
+
+    padding: 14px 18px !important;
+    text-align: center !important;
+    white-space: nowrap !important;  /* fuerza 1 sola línea */
+  }
+
+  .detalle-servicio .btn-wsp-servicio i{
+    position: static !important;     /* por si algún bloque viejo lo dejó absoluto */
+    transform: none !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}
 
