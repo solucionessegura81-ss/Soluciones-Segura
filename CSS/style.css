@@ -2049,5 +2049,21 @@ html, body {
   }
 }
 
+/* ✅ FIX URGENTE: Servicios en MÓVIL (volver a 1 columna) */
+@media (max-width: 768px){
+  .servicios{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    justify-items: center !important;
+  }
+
+  .servicios .card{
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 150px !important;
+  }
+}
 
 
