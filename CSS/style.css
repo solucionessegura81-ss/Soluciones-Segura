@@ -1967,57 +1967,47 @@ html, body {
     text-align: center !important;
 }
 
-/* ✅ FIX MÓVIL: mejor centrado y distribución (badge + botón WhatsApp) */
+/* ===== FIX REAL MÓVIL – Distribución badge y botón ===== */
 @media (max-width: 768px){
 
-  /* 1) Frase: "También podemos armarla por vos" */
-  .asesoria-pc__extra{
-    justify-content: center;
-  }
-
+  /* Badge */
   .asesoria-pc__badge{
-    display: inline-flex;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
     align-items: center;
-    justify-content: center;   /* centra conjunto */
-    gap: 8px;                  /* acerca icono y texto */
-    padding: 10px 14px;        /* igual look, pero más compacto */
+    justify-content: center;
+    gap: 6px;              /* icono más cerca */
+    padding: 10px 12px;    /* menos espacio lateral */
     text-align: center;
+    white-space: normal;   /* permite que ajuste mejor */
   }
 
   .asesoria-pc__badge i{
-    margin: 0;                 /* evita separación rara */
-    flex: 0 0 auto;
-  }
-
-  /* intenta mantener en 1 línea (si no cabe, bajará igual) */
-  .asesoria-pc__badge{
-    white-space: nowrap;
+    margin: 0;
+    font-size: 1rem;
   }
 
 
-  /* 2) Botón: "Solicitar asesoría por WhatsApp" */
+  /* Botón WhatsApp */
   .asesoria-pc .btn-wsp-servicio{
-    display: inline-flex;
+    width: 100%;
+    display: flex;
     align-items: center;
-    justify-content: center;   /* centra icono+texto */
-    gap: 10px;                 /* acerca icono y texto */
-    padding-left: 18px;        /* quita “aire” extra */
-    padding-right: 18px;
+    justify-content: center;
+    gap: 8px;              /* icono más cerca */
+    padding: 14px 16px;    /* menos aire lateral */
     text-align: center;
   }
 
   .asesoria-pc .btn-wsp-servicio i{
-    position: static !important;   /* por si alguna regla lo estaba moviendo */
+    position: static !important;
     transform: none !important;
     margin: 0 !important;
-    flex: 0 0 auto;
   }
 
-  /* intenta mantener en 1 línea */
-  .asesoria-pc .btn-wsp-servicio{
-    white-space: nowrap;
-  }
 }
+
 
 
 
