@@ -1976,3 +1976,27 @@ html, body {
   }
 }
 
+/* ✅ FIX SOLO MÓVIL: botón WhatsApp en Asesoría PC (icono + texto bien centrados) */
+@media (max-width: 768px){
+  .asesoria-pc .btn-wsp-servicio{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 14px auto 16px !important;
+
+    padding: 14px 18px !important;
+    text-align: center !important;
+  }
+
+  .asesoria-pc .btn-wsp-servicio i{
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
