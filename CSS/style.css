@@ -1913,58 +1913,45 @@ html, body {
   }
 }
 
-/* FIX FINAL: centrar texto dentro de las 3 cajas (solo Asesoría PC) */
-.asesoria-pc .asesoria-pc__lista li{
-  text-align: center !important;
-}
-
-/* ===== FIX REAL MÓVIL – Distribución badge y botón (solo Asesoría PC) ===== */
+/* ===== FIX SOLO MÓVIL: alinear icono + texto (badge y botón) SIN tocar PC ===== */
 @media (max-width: 768px){
 
-  /* Badge: icono cerca + todo centrado y bien distribuido */
+  /* Badge "También podemos armarla por vos" */
   .asesoria-pc__badge{
-    width: 100%;
-    max-width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;                 /* icono más cerca */
-    padding: 10px 12px;       /* menos aire lateral */
+    gap: 8px;                 /* icono más cerca del texto */
+    padding: 10px 14px;       /* mejor balance lateral */
     text-align: center;
-
-    flex-wrap: nowrap;        /* intenta 1 línea */
-    white-space: nowrap;      /* intenta 1 línea */
+    white-space: nowrap;      /* intenta mantener una sola línea */
   }
 
   .asesoria-pc__badge i{
-    margin: 0 !important;
-    flex: 0 0 auto;
+    margin: 0;
+    flex-shrink: 0;
   }
 
-  /* Botón WhatsApp dentro de ASESORIA: anulamos el icono absoluto del otro fix global */
-  .asesoria-pc .btn-wsp-servicio{
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;          /* icono más cerca */
-    padding: 14px 16px !important;/* quita el padding-left gigante */
-    width: 100%;
-    max-width: 340px;             /* mantiene tu estética */
-    margin-left: auto !important;
-    margin-right: auto !important;
+  /* En pantallas MUY angostas, permitir salto para que no se desborde */
+  @media (max-width: 360px){
+    .asesoria-pc__badge{ white-space: normal; }
+  }
 
-    flex-wrap: nowrap;            /* intenta 1 línea */
-    white-space: nowrap;          /* intenta 1 línea */
+  /* Botón WhatsApp SOLO dentro de Asesoría PC */
+  .asesoria-pc .btn-wsp-servicio{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;                /* icono cerca del texto */
+    padding-left: 22px !important;  /* quita el espacio extra del icono absoluto global */
+    position: relative;
+    text-align: center;
   }
 
   .asesoria-pc .btn-wsp-servicio i{
-    position: static !important;  /* mata el absolute */
-    left: auto !important;
-    top: auto !important;
+    position: static !important;     /* anula el icono absoluto del fix global */
     transform: none !important;
     margin: 0 !important;
-    flex: 0 0 auto !important;
+    flex-shrink: 0;
   }
 }
-
-
