@@ -1343,18 +1343,19 @@ html, body {
   color: #2e2e2e;
 }
 
-/* ✅ AJUSTE SOLO PC: distribuir las 3 cajas a lo ancho */
+/* ✅ PC: mantener las 3 cajas a lo ancho (SIN romper nada) */
 @media (min-width: 769px){
-  .asesoria-pc__lista{
-    max-width: 1200px;     /* más ancho real dentro del contenedor */
-    margin: 18px auto 0;   /* centra la grilla y usa todo el ancho */
-    gap: 24px;             /* un poco más de aire entre cajas */
-    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  .asesoria-pc .asesoria-pc__incluye > .asesoria-pc__lista{
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 18px auto 0 !important;
   }
 
-  .asesoria-pc__lista li{
-    text-align: left;      /* mejora lectura y evita que se vea raro centrado */
-    padding: 16px 18px;    /* caja más “pro” y menos apretada */
+  .asesoria-pc .asesoria-pc__lista > li{
+    text-align: center !important;
   }
 }
 
@@ -1955,3 +1956,4 @@ html, body {
     flex-shrink: 0;
   }
 }
+
