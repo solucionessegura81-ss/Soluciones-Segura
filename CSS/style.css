@@ -1967,6 +1967,57 @@ html, body {
     text-align: center !important;
 }
 
+/* ✅ FIX MÓVIL: mejor centrado y distribución (badge + botón WhatsApp) */
+@media (max-width: 768px){
+
+  /* 1) Frase: "También podemos armarla por vos" */
+  .asesoria-pc__extra{
+    justify-content: center;
+  }
+
+  .asesoria-pc__badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;   /* centra conjunto */
+    gap: 8px;                  /* acerca icono y texto */
+    padding: 10px 14px;        /* igual look, pero más compacto */
+    text-align: center;
+  }
+
+  .asesoria-pc__badge i{
+    margin: 0;                 /* evita separación rara */
+    flex: 0 0 auto;
+  }
+
+  /* intenta mantener en 1 línea (si no cabe, bajará igual) */
+  .asesoria-pc__badge{
+    white-space: nowrap;
+  }
+
+
+  /* 2) Botón: "Solicitar asesoría por WhatsApp" */
+  .asesoria-pc .btn-wsp-servicio{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;   /* centra icono+texto */
+    gap: 10px;                 /* acerca icono y texto */
+    padding-left: 18px;        /* quita “aire” extra */
+    padding-right: 18px;
+    text-align: center;
+  }
+
+  .asesoria-pc .btn-wsp-servicio i{
+    position: static !important;   /* por si alguna regla lo estaba moviendo */
+    transform: none !important;
+    margin: 0 !important;
+    flex: 0 0 auto;
+  }
+
+  /* intenta mantener en 1 línea */
+  .asesoria-pc .btn-wsp-servicio{
+    white-space: nowrap;
+  }
+}
 
 
 
