@@ -1957,3 +1957,22 @@ html, body {
   }
 }
 
+/* ✅ FIX FINAL SOLO PC: las 3 cajas usan TODO el ancho disponible */
+@media (min-width: 769px){
+  .asesoria-pc .asesoria-pc__incluye{
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .asesoria-pc .asesoria-pc__incluye > .asesoria-pc__lista{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 18px auto 0 !important;
+  }
+}
+
