@@ -2064,3 +2064,30 @@ html, body {
   }
 
 }
+
+/* ===== FIX FINAL: Botón WhatsApp centrado en PÁGINAS DE SERVICIO (SOLO MÓVIL) ===== */
+@media (max-width: 768px){
+
+  .detalle-servicio .btn-wsp-servicio{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    padding-left: 22px !important;  /* anula el padding-left 54px */
+    padding-right: 22px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .detalle-servicio .btn-wsp-servicio i{
+    position: static !important;     /* anula el icono absoluto */
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+}
