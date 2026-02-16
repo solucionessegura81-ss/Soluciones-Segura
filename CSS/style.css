@@ -2120,31 +2120,3 @@ html, body {
     margin: 0 !important;
   }
 }
-
-/* ✅ FIX DEFINITIVO — SOLO MÓVIL — SOLO PÁGINAS INTERNAS (SERVICIOS) */
-@media (max-width: 768px){
-  .detalle-servicio .btn-wsp-servicio{
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-
-    width: 100% !important;
-    max-width: 340px !important;
-    margin: 14px auto 16px !important;
-
-    padding-left: 22px !important;  /* quita el “hueco” del icono absoluto */
-    padding-right: 22px !important;
-    position: relative !important;
-  }
-
-  .detalle-servicio .btn-wsp-servicio i{
-    position: static !important;    /* 🔥 anula el icono absoluto */
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-  }
-}
-
