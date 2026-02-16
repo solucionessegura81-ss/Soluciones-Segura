@@ -1923,98 +1923,70 @@ html, body {
   .asesoria-pc .asesoria-pc__incluye > .asesoria-pc__lista{
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 20px !important;
+    gap: 24px !important;
     width: 100% !important;
     margin: 18px auto 0 !important;
   }
-}
 
-@media (min-width: 769px){
   .asesoria-pc .asesoria-pc__incluye{
     max-width: 1200px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  .asesoria-pc .asesoria-pc__lista{
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 18px auto 0 !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 24px !important;
-
-    @media (min-width: 769px){
-  .asesoria-pc .asesoria-pc__lista li{
-    text-align: center !important;
-  }
-}
-
-/* ✅ FIX SOLO PC: centrar texto REAL en las 3 cajas de asesoría */
-@media (min-width: 769px){
-  .asesoria-pc .asesoria-pc__lista > li{
-    text-align: center !important;
-  }
-
-  /* el ✓ es el que “jala” el texto a la izquierda, lo pasamos arriba */
+  /* el ✓ era el que “jala” visualmente: lo centramos arriba */
   .asesoria-pc .asesoria-pc__lista > li::before{
     display: block !important;
-    margin: 0 auto 8px !important;  /* centrado y con espacio abajo */
+    margin: 0 auto 8px !important;
   }
 }
 
-/* TEST 1: si esto NO cambia, el selector NO está aplicando o no estás viendo ese HTML */
-.asesoria-pc .asesoria-pc__lista li{
-    text-align: center !important;
-}
-
-/* ===== FIX REAL MÓVIL – Distribución badge y botón ===== */
+/* ===== FIX REAL MÓVIL – Distribución badge y botón (solo Asesoría PC) ===== */
 @media (max-width: 768px){
 
-  /* Badge */
+  /* Badge: icono cerca + todo centrado y bien distribuido */
   .asesoria-pc__badge{
     width: 100%;
     max-width: 100%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;              /* icono más cerca */
-    padding: 10px 12px;    /* menos espacio lateral */
+    gap: 6px;                 /* icono más cerca */
+    padding: 10px 12px;       /* menos aire lateral */
     text-align: center;
-    white-space: normal;   /* permite que ajuste mejor */
+
+    flex-wrap: nowrap;        /* intenta 1 línea */
+    white-space: nowrap;      /* intenta 1 línea */
   }
 
   .asesoria-pc__badge i{
-    margin: 0;
-    font-size: 1rem;
+    margin: 0 !important;
+    flex: 0 0 auto;
   }
 
-
-  /* Botón WhatsApp */
+  /* Botón WhatsApp dentro de ASESORIA: anulamos el icono absoluto del otro fix global */
   .asesoria-pc .btn-wsp-servicio{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;          /* icono más cerca */
+    padding: 14px 16px !important;/* quita el padding-left gigante */
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;              /* icono más cerca */
-    padding: 14px 16px;    /* menos aire lateral */
-    text-align: center;
+    max-width: 340px;             /* mantiene tu estética */
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    flex-wrap: nowrap;            /* intenta 1 línea */
+    white-space: nowrap;          /* intenta 1 línea */
   }
 
   .asesoria-pc .btn-wsp-servicio i{
-    position: static !important;
+    position: static !important;  /* mata el absolute */
+    left: auto !important;
+    top: auto !important;
     transform: none !important;
     margin: 0 !important;
+    flex: 0 0 auto !important;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
