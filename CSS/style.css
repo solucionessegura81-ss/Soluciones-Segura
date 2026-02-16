@@ -2048,3 +2048,19 @@ html, body {
     margin: 0 !important;
   }
 }
+
+/* ===== CENTRAR BOTONES WHATSAPP EN PÁGINAS DE SERVICIO (SOLO MÓVIL) ===== */
+@media (max-width: 768px){
+
+  .detalle-servicio .btn-wsp-servicio{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    text-align: center !important;
+  }
+
+}
