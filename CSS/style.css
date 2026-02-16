@@ -2186,31 +2186,3 @@ html, body {
   }
 
 }
-
-/* ✅ FIX SEGURO — SOLO MÓVIL — SOLO PÁGINAS INTERNAS (SERVICIOS) */
-@media (max-width: 768px){
-  /* neutraliza cualquier regla anterior que ponga el ícono absoluto o deje “hueco” */
-  .detalle-servicio .btn-wsp-servicio{
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-
-    width: 100% !important;
-    max-width: 340px !important;
-    margin: 14px auto 16px !important;
-
-    padding-left: 18px !important;   /* mata el padding-left 54px si existe */
-    padding-right: 18px !important;
-    text-align: center !important;
-  }
-
-  .detalle-servicio .btn-wsp-servicio i{
-    position: static !important;     /* mata el position:absolute si existe */
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-  }
-}
