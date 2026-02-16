@@ -2000,3 +2000,29 @@ html, body {
     margin: 0 !important;
   }
 }
+
+/* ✅ FIX SOLO MÓVIL: botón WhatsApp dentro de Asesoría PC (sin depender de la clase) */
+@media (max-width: 768px){
+  .asesoria-pc a[href*="wa.me"],
+  .asesoria-pc a[href*="api.whatsapp.com"],
+  .asesoria-pc a[href*="whatsapp"]{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 14px auto 16px !important;
+
+    text-align: center !important;
+  }
+
+  .asesoria-pc a[href*="wa.me"] i,
+  .asesoria-pc a[href*="api.whatsapp.com"] i,
+  .asesoria-pc a[href*="whatsapp"] i{
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
