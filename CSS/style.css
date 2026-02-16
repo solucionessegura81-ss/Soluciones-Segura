@@ -2026,3 +2026,25 @@ html, body {
     margin: 0 !important;
   }
 }
+
+/* ✅ FIX DEFINITIVO SOLO MÓVIL: centrar ICONO + TEXTO dentro del botón WhatsApp (Asesoría PC) */
+@media (max-width: 768px){
+  .asesoria-pc .btn-wsp-servicio{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    padding-left: 18px !important; /* quita el "hueco" que lo des-centra */
+    padding-right: 18px !important;
+
+    text-align: center !important;
+    white-space: nowrap !important; /* fuerza 1 sola línea */
+  }
+
+  .asesoria-pc .btn-wsp-servicio i{
+    position: static !important;   /* anula el icono absoluto que lo separa */
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
