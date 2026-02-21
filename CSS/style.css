@@ -2196,3 +2196,16 @@ html, body {
     margin-right: auto;
   }
 }
+
+/* ✅ FIX DEFINITIVO SOLO MÓVIL: slider centrado real (full-bleed 100vw) */
+@media (max-width: 768px){
+  .promo-slider{
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
