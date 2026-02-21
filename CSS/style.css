@@ -2247,3 +2247,13 @@ html, body {
     object-fit: contain;
   }
 }
+
+/* ✅ AJUSTE SOLO PC: cubrir ancho sin franjas negras */
+@media (min-width: 769px){
+  .promo-slider__slide img{
+    height: 520px;        /* mantiene el alto que te gustó */
+    width: 100%;
+    object-fit: cover;    /* 🔥 cubre todo el contenedor */
+    object-position: center;
+  }
+}
