@@ -2210,14 +2210,14 @@ html, body {
   }
 }
 
-/* ===== FIX PROMOS: PC sin recorte + circulitos sin franja ===== */
-.promo-slider{
+/* ===== FIX PROMOS: PC sin recorte + dots sin franja ===== */
+.promo-slider__box{
   position: relative;
   overflow: hidden;
 }
 
-/* La imagen se ve COMPLETA (no se recorta) y queda centrada */
-.promo-slider img{
+/* PC y móvil: que la imagen se vea completa y centrada (sin recorte) */
+.promo-slider__slide img{
   width: 100%;
   height: auto;
   display: block;
@@ -2225,8 +2225,8 @@ html, body {
   object-position: center;
 }
 
-/* Los circulitos flotan sobre la imagen y sin fondo */
-.promo-dots{
+/* Dots flotando sobre la imagen y sin fondo/franja */
+.promo-slider__dots{
   position: absolute;
   left: 0;
   right: 0;
@@ -2239,3 +2239,4 @@ html, body {
   margin: 0 !important;
   z-index: 5;
 }
+
