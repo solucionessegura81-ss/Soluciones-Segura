@@ -30,18 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // No bloquea el click, solo agrega clase y la quita
 // =============================================
 (function () {
-  const cards = document.querySelectorAll('.card');
+   cards = document.querySelectorAll('.card');
   if (!cards.length) return;
 
   // Solo aplica en dispositivos touch (móvil/tablet)
-  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+   isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
   if (!isTouchDevice) return;
 
   let lastTouchTime = 0;
 
   cards.forEach(card => {
     card.addEventListener('touchstart', () => {
-      const now = Date.now();
+       now = Date.now();
 
       // Evita dispararlo demasiadas veces mientras arrastrás
       if (now - lastTouchTime < 220) return;
@@ -63,10 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // (no abre el link en ese toque)
 // =====================================================
 document.addEventListener("DOMContentLoaded", () => {
-  const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+   isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
   if (!isTouch) return;
 
-  const cards = Array.from(document.querySelectorAll(".card"));
+   cards = Array.from(document.querySelectorAll(".card"));
   if (!cards.length) return;
 
   // Detecta si el usuario viene haciendo scroll recientemente
@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastCard = null;
   let lastTime = 0;
 
-  const triggerShine = (card) => {
-    const now = Date.now();
+   triggerShine = (card) => {
+     now = Date.now();
     if (card === lastCard && now - lastTime < 450) return;
 
     lastCard = card;
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Bloquear apertura SOLO en ese toque "mientras bajaba"
-  const blockClickOnce = (card) => {
+   blockClickOnce = (card) => {
     card.dataset.blockClickOnce = "1";
     setTimeout(() => { delete card.dataset.blockClickOnce; }, 350);
   };
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== Shine del HEADER al cargar (móvil y PC) =====
 window.addEventListener("load", () => {
-  const header = document.querySelector(".header");
+   header = document.querySelector(".header");
   if (!header) return;
 
   // Dispara el efecto después de que ya cargó la imagen y fuentes
@@ -135,14 +135,14 @@ window.addEventListener("load", () => {
 });
 
 (function(){
-  const track = document.getElementById("promoTrack");
-  const dotsWrap = document.getElementById("promoDots");
+   track = document.getElementById("promoTrack");
+   dotsWrap = document.getElementById("promoDots");
   if(!track || !dotsWrap) return;
 
-  const slides = Array.from(track.querySelectorAll(".promo-slider__slide"));
+   slides = Array.from(track.querySelectorAll(".promo-slider__slide"));
   let index = 0;
   let timer = null;
-  const intervalMs = 3500;
+  const intervalMs = 4500;
 
   // Crear dots
   slides.forEach((_, i) => {
