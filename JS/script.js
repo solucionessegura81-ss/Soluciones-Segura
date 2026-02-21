@@ -133,3 +133,61 @@ window.addEventListener("load", () => {
     setTimeout(() => header.classList.remove("is-shining"), 1400);
   }, 250);
 });
+
+(function(){
+  const track = document.getElementById("promoTrack");
+  const dotsWrap = document.getElementById("promoDots");
+  if(!track || !dotsWrap) return;
+
+  const slides = Array.from(track.querySelectorAll(".promo-slider__slide"));
+  let index = 0;
+  let timer = null;
+  const intervalMs = 3500;
+
+  // Crear dots
+  slides.forEach((_, i) => {
+    const b = document.createElement("button");
+    b.className = "promo-slider__dot" + (i === 0 ? " is-active" : "");
+    b.setAttribute("aria-label", "Ir a promoción " + (i+1));
+    b.addEventListener("click", () => goTo(i, true));
+    dotsWrap.appendChild(b);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll(".promo-slider__dot"));
+
+  function render(){
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+  }
+
+  function goTo(i, restart){
+    index = (i + slides.length) % slides.length;
+    render();
+    if(restart) restartAuto();
+  }
+
+  function next(){
+    goTo(index + 1, false);
+  }
+
+  function startAuto(){
+    timer = setInterval(next, intervalMs);
+  }
+
+  function stopAuto(){
+    if(timer) clearInterval(timer);
+    timer = null;
+  }
+
+  function restartAuto(){
+    stopAuto();
+    startAuto();
+  }
+
+  // Pausa si el usuario interactúa
+  dotsWrap.addEventListener("mouseenter", stopAuto);
+  dotsWrap.addEventListener("mouseleave", startAuto);
+
+  render();
+  startAuto();
+})();
