@@ -2243,7 +2243,7 @@ html, body {
 /* ✅ AJUSTE SOLO PC: limitar altura del slider */
 @media (min-width: 769px){
   .promo-slider__slide img{
-    max-height: 520px;   /* puedes ajustar 480px – 550px según gusto */
+    max-height: 550px;   /* puedes ajustar 480px – 550px según gusto */
     object-fit: contain;
   }
 }
@@ -2257,3 +2257,4 @@ html, body {
     object-position: center;
   }
 }
+
