@@ -2115,3 +2115,64 @@ html, body {
     flex-shrink: 0 !important;
   }
 }
+
+/* ============================= */
+/* SLIDER PUBLICITARIO (TOP)     */
+/* No rompe tu header: va arriba */
+/* ============================= */
+
+.promo-slider{
+  width: 100%;
+  padding: 14px 12px;         /* separa del header */
+  background: #f1f3f5;        /* igual a tu fondo */
+}
+
+.promo-slider__box{
+  width: min(1200px, 96vw);
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.promo-slider__track{
+  display: flex;
+  width: 100%;
+  transform: translateX(0%);
+  transition: transform 0.45s ease;
+}
+
+.promo-slider__slide{
+  min-width: 100%;
+  display: block;
+}
+
+.promo-slider__slide img{
+  width: 100%;
+  height: clamp(220px, 45vw, 430px); /* ✅ buen alto PC/móvil */
+  display: block;
+  object-fit: cover;
+}
+
+/* Dots */
+.promo-slider__dots{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px 14px;
+  background: #111;
+}
+
+.promo-slider__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  opacity: 0.45;
+}
+
+.promo-slider__dot.is-active{
+  opacity: 1;
+}
