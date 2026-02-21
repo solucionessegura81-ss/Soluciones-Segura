@@ -191,3 +191,45 @@ window.addEventListener("load", () => {
   render();
   startAuto();
 })();
+
+// ✅ Re-disparar el "shine" del header cada vez que el logo/header sea visible
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".header");
+  if (!header) return;
+
+  // Si el usuario prefiere reducir movimiento, no forzamos animaciones
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  // Función que dispara el efecto (reinicia la animación)
+  const triggerShine = () => {
+    header.classList.remove("is-shining");
+    // Forzar reflow para reiniciar animación CSS
+    void header.offsetWidth;
+    header.classList.add("is-shining");
+  };
+
+  // Cada vez que termina la animación, quitamos la clase
+  // para que pueda volver a activarse la próxima vez que entre en pantalla
+  header.addEventListener("animationend", (e) => {
+    if (e.animationName === "shineSweep") {
+      header.classList.remove("is-shining");
+    }
+  });
+
+  // Observa cuando el header entra/sale de la pantalla
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          triggerShine();
+        }
+      });
+    },
+    {
+      threshold: 0.45, // cuando ~45% del header está visible, dispara
+    }
+  );
+
+  io.observe(header);
+});
