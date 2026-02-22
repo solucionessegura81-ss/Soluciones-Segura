@@ -144,7 +144,7 @@ window.addEventListener("load", () => {
 
   let index = 0;
   let timer = null;
-  const intervalMs = 4500;
+  const intervalMs = 4000;
 
   // Crear dots (limpia por si el script se ejecuta 2 veces)
   dotsWrap.innerHTML = "";
