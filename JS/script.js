@@ -134,59 +134,75 @@ window.addEventListener("load", () => {
   }, 250);
 });
 
-(function(){
-   track = document.getElementById("promoTrack");
-   dotsWrap = document.getElementById("promoDots");
-  if(!track || !dotsWrap) return;
+(function () {
+  const track = document.getElementById("promoTrack");
+  const dotsWrap = document.getElementById("promoDots");
+  if (!track || !dotsWrap) return;
 
-   slides = Array.from(track.querySelectorAll(".promo-slider__slide"));
+  const slides = Array.from(track.querySelectorAll(".promo-slider__slide"));
+  if (slides.length <= 1) return;
+
   let index = 0;
   let timer = null;
   const intervalMs = 4500;
 
-  // Crear dots
+  // Crear dots (limpia por si el script se ejecuta 2 veces)
+  dotsWrap.innerHTML = "";
   slides.forEach((_, i) => {
     const b = document.createElement("button");
+    b.type = "button";
     b.className = "promo-slider__dot" + (i === 0 ? " is-active" : "");
-    b.setAttribute("aria-label", "Ir a promoción " + (i+1));
+    b.setAttribute("aria-label", "Ir a promoción " + (i + 1));
     b.addEventListener("click", () => goTo(i, true));
     dotsWrap.appendChild(b);
   });
 
   const dots = Array.from(dotsWrap.querySelectorAll(".promo-slider__dot"));
 
-  function render(){
+  function render() {
     track.style.transform = `translateX(-${index * 100}%)`;
     dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
   }
 
-  function goTo(i, restart){
+  function goTo(i, restart) {
     index = (i + slides.length) % slides.length;
     render();
-    if(restart) restartAuto();
+    if (restart) restartAuto();
   }
 
-  function next(){
+  function next() {
     goTo(index + 1, false);
   }
 
-  function startAuto(){
+  function startAuto() {
+    if (timer) return; // ✅ evita múltiples timers (causa de “saltos” rápidos)
     timer = setInterval(next, intervalMs);
   }
 
-  function stopAuto(){
-    if(timer) clearInterval(timer);
+  function stopAuto() {
+    if (!timer) return;
+    clearInterval(timer);
     timer = null;
   }
 
-  function restartAuto(){
+  function restartAuto() {
     stopAuto();
     startAuto();
   }
 
-  // Pausa si el usuario interactúa
+  // Pausa/continúa con interacción (sin duplicar timers)
   dotsWrap.addEventListener("mouseenter", stopAuto);
   dotsWrap.addEventListener("mouseleave", startAuto);
+
+  // En móvil: si toca los dots, no se acelera
+  dotsWrap.addEventListener("touchstart", stopAuto, { passive: true });
+  dotsWrap.addEventListener("touchend", startAuto);
+
+  // Si la pestaña pierde foco, evita “acumulación” y saltos al volver
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopAuto();
+    else startAuto();
+  });
 
   render();
   startAuto();
