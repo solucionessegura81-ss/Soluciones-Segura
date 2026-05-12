@@ -249,3 +249,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   io.observe(header);
 });
+
+// ===== CERRAR PROMO FLOTANTE =====
+
+const cerrarPromo = document.getElementById("cerrarPromo");
+const promoFlotante = document.getElementById("promoFlotante");
+
+if(cerrarPromo && promoFlotante){
+
+  cerrarPromo.addEventListener("click", () => {
+    promoFlotante.style.display = "none";
+  });
+
+}
