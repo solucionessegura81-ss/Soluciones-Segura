@@ -2327,7 +2327,7 @@ html, body {
 
   transform: translateX(-50%);
 
-  width: 540px;
+  width: 440px;
   z-index: 9998;
 
   animation: aparecerPromo 0.4s ease;
