@@ -252,13 +252,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== CERRAR PROMO FLOTANTE =====
 
-const cerrarPromo = document.getElementById("cerrarPromo");
-const promoFlotante = document.getElementById("promoFlotante");
+window.addEventListener("load", () => {
 
-if(cerrarPromo && promoFlotante){
+  const cerrarPromo = document.getElementById("cerrarPromo");
+  const promoFlotante = document.getElementById("promoFlotante");
 
-  cerrarPromo.addEventListener("click", () => {
-    promoFlotante.style.display = "none";
-  });
+  if(cerrarPromo && promoFlotante){
 
-}
+    cerrarPromo.addEventListener("click", () => {
+      promoFlotante.remove();
+    });
+
+  }
+
+});
