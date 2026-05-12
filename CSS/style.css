@@ -2327,7 +2327,7 @@ html, body {
 
   transform: translateX(-50%);
 
-  width: 340px;
+  width: 540px;
   z-index: 9998;
 
   animation: aparecerPromo 0.4s ease;
@@ -2368,7 +2368,7 @@ html, body {
 @media (max-width: 768px){
 
   .promo-flotante{
-    width: 220px;
+    width: 320px;
     bottom: 85px;
   }
 
