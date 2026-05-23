@@ -2323,7 +2323,7 @@ html, body {
   position: fixed;
 
   left: 50%;
-  top: 55%;
+  top: 58%;
 
   transform: translate(-50%, -50%);
 
@@ -2368,10 +2368,9 @@ html, body {
 @media (max-width: 768px){
 
   .promo-flotante{
-    top: auto;
+    width: 320px;
     bottom: 85px;
-    transform: translateX(-50%);
-  }
+    }
 
 }
 
