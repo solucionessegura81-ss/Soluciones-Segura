@@ -2323,9 +2323,9 @@ html, body {
   position: fixed;
 
   left: 50%;
-  bottom: 90px;
+  top: 50px;
 
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 
   width: 440px;
   z-index: 9998;
