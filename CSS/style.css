@@ -2368,8 +2368,9 @@ html, body {
 @media (max-width: 768px){
 
   .promo-flotante{
-    width: 320px;
+    top: auto;
     bottom: 85px;
+    transform: translateX(-50%);
   }
 
 }
