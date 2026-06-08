@@ -63,10 +63,10 @@ const cards = document.querySelectorAll('.card');
 // (no abre el link en ese toque)
 // =====================================================
 document.addEventListener("DOMContentLoaded", () => {
-   isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
   if (!isTouch) return;
 
-   cards = Array.from(document.querySelectorAll(".card"));
+  const cards = Array.from(document.querySelectorAll(".card"));
   if (!cards.length) return;
 
   // Detecta si el usuario viene haciendo scroll recientemente
@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastCard = null;
   let lastTime = 0;
 
-   triggerShine = (card) => {
-     now = Date.now();
+  const triggerShine = (card) => {
+     const now = Date.now();
     if (card === lastCard && now - lastTime < 450) return;
 
     lastCard = card;
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Bloquear apertura SOLO en ese toque "mientras bajaba"
-   blockClickOnce = (card) => {
+   const blockClickOnce = (card) => {
     card.dataset.blockClickOnce = "1";
     setTimeout(() => { delete card.dataset.blockClickOnce; }, 350);
   };
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== Shine del HEADER al cargar (móvil y PC) =====
 window.addEventListener("load", () => {
-   header = document.querySelector(".header");
+  const header = document.querySelector(".header");
   if (!header) return;
 
   // Dispara el efecto después de que ya cargó la imagen y fuentes
