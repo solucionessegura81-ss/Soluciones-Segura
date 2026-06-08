@@ -2390,3 +2390,90 @@ html, body {
     transform: translateX(-50%) translateY(0);
   }
 }
+
+/* ===== SECCION CONFIANZA ===== */
+.confianza {
+  max-width: 1300px;
+  margin: 10px auto 30px;
+  padding: 34px 24px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.confianza h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0a1f44;
+  margin: 0 0 28px;
+}
+
+.confianza h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #25D366, #0a3cff);
+  margin: 14px auto 0;
+  border-radius: 20px;
+}
+
+.confianza-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.confianza-item {
+  padding: 24px 20px;
+  border-radius: 16px;
+  background: #f1f3f5;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.confianza-item i {
+  font-size: 2.6rem;
+  color: #1f3c88;
+  margin-bottom: 14px;
+}
+
+.confianza-item .fa-whatsapp {
+  color: #25D366;
+}
+
+.confianza-item h3 {
+  font-size: 1.15rem;
+  color: #0a1f44;
+  margin: 0 0 10px;
+  font-weight: 900;
+}
+
+.confianza-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2e2e2e;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .confianza {
+    margin: 8px 16px 24px;
+    padding: 26px 16px;
+  }
+
+  .confianza h2 {
+    font-size: 1.7rem;
+  }
+
+  .confianza-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .confianza-item {
+    padding: 22px 18px;
+  }
+}
