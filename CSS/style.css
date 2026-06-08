@@ -235,7 +235,7 @@ footer {
 }
 
 /* ===== RESPONSIVO ===== */
- (max-width: 768px) {
+ @media (max-width: 768px) {
 
   .header {
     background-image: url("../IMG/fondo1-mobile.jpg");
