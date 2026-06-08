@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // No bloquea el click, solo agrega clase y la quita
 // =============================================
 (function () {
-const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.card');
   if (!cards.length) return;
 
   // Solo aplica en dispositivos touch (móvil/tablet)
@@ -41,7 +41,7 @@ const cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
     card.addEventListener('touchstart', () => {
-    const now = Date.now();
+      const now = Date.now();
 
       // Evita dispararlo demasiadas veces mientras arrastrás
       if (now - lastTouchTime < 220) return;
