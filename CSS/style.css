@@ -2851,3 +2851,111 @@ html, body {
     justify-items: center;
   }
 }
+
+/* ===== FIX FINAL ASESORIA PC DESTACADA ===== */
+.asesoria-pc {
+  width: min(1300px, calc(100% - 32px));
+  margin: 18px auto 34px !important;
+}
+
+.asesoria-pc__content {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  gap: 34px;
+  align-items: stretch;
+}
+
+.asesoria-pc__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+}
+
+.asesoria-pc__beneficios {
+  align-self: center;
+  width: 100%;
+}
+
+.asesoria-pc__beneficio {
+  grid-template-columns: 58px minmax(0, 1fr);
+}
+
+.asesoria-pc__beneficio h3,
+.asesoria-pc__beneficio p {
+  text-align: left;
+}
+
+.asesoria-pc .btn-wsp-servicio {
+  width: auto !important;
+  max-width: none !important;
+  margin: 8px 0 14px !important;
+  padding: 13px 22px !important;
+  padding-left: 22px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+.asesoria-pc .btn-wsp-servicio i {
+  position: static !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .asesoria-pc {
+    width: calc(100% - 32px);
+    margin: 14px auto 28px !important;
+  }
+
+  .asesoria-pc__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 28px 16px;
+    gap: 22px;
+    justify-items: center;
+  }
+
+  .asesoria-pc__main {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .asesoria-pc h2,
+  .asesoria-pc p,
+  .asesoria-pc .microcopy-wsp {
+    text-align: center;
+  }
+
+  .asesoria-pc__tags,
+  .asesoria-pc__extra {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .asesoria-pc__beneficios {
+    width: 100%;
+  }
+
+  .asesoria-pc__beneficio {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .asesoria-pc__beneficio h3,
+  .asesoria-pc__beneficio p {
+    text-align: center;
+  }
+
+  .asesoria-pc .btn-wsp-servicio {
+    width: 100% !important;
+    max-width: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 14px 18px !important;
+  }
+}
