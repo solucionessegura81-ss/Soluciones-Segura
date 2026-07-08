@@ -5,7 +5,7 @@ body {
   background: #f1f3f5;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER ===== */ 
 .header {
   position: relative;
   background-image: url("../IMG/fondo1.jpg");
@@ -2392,12 +2392,12 @@ html, body {
 @keyframes aparecerPromo{
   from{
     opacity: 0;
-    transform: translateX(-50%) translateY(20px);
+    transform: translate(-50%, calc(-50% + 20px));
   }
 
   to{
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translate(-50%, -50%);
   }
 }
 
