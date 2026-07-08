@@ -139,34 +139,51 @@ window.addEventListener("load", () => {
   const dotsWrap = document.getElementById("promoDots");
   if (!track || !dotsWrap) return;
 
+  const sliderBox = track.closest(".promo-slider__box");
+
+  track.querySelectorAll("[data-promo-clone='true']").forEach((clone) => clone.remove());
+
   const slides = Array.from(track.querySelectorAll(".promo-slider__slide"));
   if (slides.length <= 1) return;
 
+  const totalSlides = slides.length;
+  const firstClone = slides[0].cloneNode(true);
+
+  firstClone.dataset.promoClone = "true";
+  firstClone.setAttribute("aria-hidden", "true");
+  track.appendChild(firstClone);
+
   let index = 0;
   let timer = null;
-  const intervalMs = 4000;
+  const intervalMs = 4500;
 
-  // Crear dots (limpia por si el script se ejecuta 2 veces)
   dotsWrap.innerHTML = "";
+
   slides.forEach((_, i) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "promo-slider__dot" + (i === 0 ? " is-active" : "");
-    b.setAttribute("aria-label", "Ir a promoción " + (i + 1));
-    b.addEventListener("click", () => goTo(i, true));
-    dotsWrap.appendChild(b);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "promo-slider__dot" + (i === 0 ? " is-active" : "");
+    button.setAttribute("aria-label", "Ir a promoción " + (i + 1));
+    button.addEventListener("click", () => goTo(i, true));
+    dotsWrap.appendChild(button);
   });
 
   const dots = Array.from(dotsWrap.querySelectorAll(".promo-slider__dot"));
 
-  function render() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+  function setTransition(enabled) {
+    track.style.transition = enabled ? "transform 0.45s ease" : "none";
   }
 
-  function goTo(i, restart) {
-    index = (i + slides.length) % slides.length;
-    render();
+  function render(animated = true) {
+    setTransition(animated);
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index % totalSlides));
+  }
+
+  function goTo(newIndex, restart) {
+    index = newIndex;
+    render(true);
+
     if (restart) restartAuto();
   }
 
@@ -174,8 +191,17 @@ window.addEventListener("load", () => {
     goTo(index + 1, false);
   }
 
+  track.addEventListener("transitionend", () => {
+    if (index === totalSlides) {
+      index = 0;
+      render(false);
+      void track.offsetWidth;
+      setTransition(true);
+    }
+  });
+
   function startAuto() {
-    if (timer) return; // ✅ evita múltiples timers (causa de “saltos” rápidos)
+    if (timer) return;
     timer = setInterval(next, intervalMs);
   }
 
@@ -190,21 +216,21 @@ window.addEventListener("load", () => {
     startAuto();
   }
 
-  // Pausa/continúa con interacción (sin duplicar timers)
-  dotsWrap.addEventListener("mouseenter", stopAuto);
-  dotsWrap.addEventListener("mouseleave", startAuto);
+  if (sliderBox) {
+    sliderBox.addEventListener("mouseenter", stopAuto);
+    sliderBox.addEventListener("mouseleave", startAuto);
 
-  // En móvil: si toca los dots, no se acelera
-  dotsWrap.addEventListener("touchstart", stopAuto, { passive: true });
-  dotsWrap.addEventListener("touchend", startAuto);
+    sliderBox.addEventListener("touchstart", stopAuto, { passive: true });
+    sliderBox.addEventListener("touchend", startAuto);
+    sliderBox.addEventListener("touchcancel", startAuto);
+  }
 
-  // Si la pestaña pierde foco, evita “acumulación” y saltos al volver
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) stopAuto();
     else startAuto();
   });
 
-  render();
+  render(false);
   startAuto();
 })();
 
