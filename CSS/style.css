@@ -2477,3 +2477,129 @@ html, body {
     padding: 22px 18px;
   }
 }
+
+/* ===== HEADER PRO ===== */
+.header {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 20px;
+  overflow: hidden;
+}
+
+.header::before {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.68), rgba(0,0,0,0.48)),
+    radial-gradient(circle at top center, rgba(37,211,102,0.22), transparent 45%);
+}
+
+.header__content {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header__content img {
+  width: min(620px, 92vw);
+  margin: 0 auto 10px;
+}
+
+.header__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px auto 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  backdrop-filter: blur(6px);
+}
+
+.header__content h1 {
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+
+.header__content p {
+  max-width: 820px;
+  margin: 0 auto 26px;
+  font-size: 1.12rem;
+}
+
+.header__actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.header__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.22);
+}
+
+.header__btn--wsp {
+  background: #25D366;
+  color: #ffffff;
+}
+
+.header__btn--ghost {
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+}
+
+.header__btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 500px;
+    padding: 54px 16px;
+  }
+
+  .header__content img {
+    width: min(330px, 92vw);
+    margin-bottom: 8px;
+  }
+
+  .header__badge {
+    font-size: 0.86rem;
+    padding: 7px 12px;
+  }
+
+  .header__content h1 {
+    font-size: 2.15rem;
+  }
+
+  .header__content p {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+
+  .header__actions {
+    gap: 10px;
+  }
+
+  .header__btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
