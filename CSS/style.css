@@ -2655,3 +2655,199 @@ html, body {
     max-width: 320px;
   }
 }
+
+/* ===== ASESORIA PC DESTACADA ===== */
+.asesoria-pc {
+  max-width: 1300px;
+  margin: 18px auto 34px;
+  padding: 0;
+  background:
+    radial-gradient(circle at top left, rgba(37,211,102,0.22), transparent 34%),
+    linear-gradient(135deg, #0a1f44 0%, #101820 58%, #1f3c88 100%);
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(0,0,0,0.18);
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.asesoria-pc__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 26px;
+  align-items: center;
+  padding: 38px 34px;
+}
+
+.asesoria-pc__main {
+  text-align: left;
+}
+
+.asesoria-pc__icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #25D366;
+  font-size: 2.7rem;
+}
+
+.asesoria-pc__eyebrow {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(37,211,102,0.16);
+  border: 1px solid rgba(37,211,102,0.35);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.88rem;
+}
+
+.asesoria-pc h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.08;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+
+.asesoria-pc p {
+  max-width: 720px;
+  margin: 0 0 16px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.asesoria-pc__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 14px;
+}
+
+.asesoria-pc__tags span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.asesoria-pc__extra {
+  justify-content: flex-start;
+  margin: 14px 0 12px;
+}
+
+.asesoria-pc__badge {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(37,211,102,0.38);
+  color: #ffffff;
+}
+
+.asesoria-pc__badge i {
+  color: #25D366;
+}
+
+.asesoria-pc .btn-wsp-servicio {
+  margin: 8px 0 14px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.26);
+}
+
+.asesoria-pc .microcopy-wsp {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.74);
+}
+
+.asesoria-pc__beneficios {
+  display: grid;
+  gap: 14px;
+}
+
+.asesoria-pc__beneficio {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+}
+
+.asesoria-pc__beneficio i {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37,211,102,0.18);
+  color: #25D366;
+  font-size: 1.55rem;
+}
+
+.asesoria-pc__beneficio h3 {
+  color: #ffffff;
+  margin: 0 0 5px;
+  font-size: 1.05rem;
+}
+
+.asesoria-pc__beneficio p {
+  margin: 0;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .asesoria-pc {
+    margin: 14px 16px 28px;
+    border-radius: 18px;
+  }
+
+  .asesoria-pc__content {
+    grid-template-columns: 1fr;
+    padding: 28px 18px;
+    gap: 22px;
+  }
+
+  .asesoria-pc__main {
+    text-align: center;
+  }
+
+  .asesoria-pc__icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .asesoria-pc__tags {
+    justify-content: center;
+  }
+
+  .asesoria-pc__extra {
+    justify-content: center;
+  }
+
+  .asesoria-pc .btn-wsp-servicio {
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .asesoria-pc__beneficio {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+}
