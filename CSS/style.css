@@ -3032,3 +3032,35 @@ html, body {
     white-space: normal !important;
   }
 }
+
+/* ===== FIX MOVIL BADGE ASESORIA PC ===== */
+@media (max-width: 768px) {
+  .asesoria-pc__badge {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    max-width: 340px !important;
+    min-height: 70px !important;
+
+    padding: 14px 54px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    text-align: center !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+
+  .asesoria-pc__badge i {
+    position: absolute !important;
+    left: 22px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    margin: 0 !important;
+    font-size: 1.45rem !important;
+  }
+}
