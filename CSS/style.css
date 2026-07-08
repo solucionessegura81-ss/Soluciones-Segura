@@ -2368,13 +2368,23 @@ html, body {
 @media (max-width: 768px){
 
   .promo-flotante{
-    width: 320px;
-
+    width: min(300px, calc(100vw - 36px));
     left: 50%;
-    top: 50%;
+    top: 48%;
     bottom: auto;
-
     transform: translate(-50%, -50%);
+  }
+
+  .promo-flotante__cerrar{
+    width: 36px;
+    height: 36px;
+    top: -14px;
+    right: -10px;
+    font-size: 1.35rem;
+  }
+
+  .promo-flotante img{
+    border-radius: 14px;
   }
 
 }
