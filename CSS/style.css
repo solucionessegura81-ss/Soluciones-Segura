@@ -3189,3 +3189,21 @@ html, body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== HEADER BOTONES EXTRA ===== */
+.header__actions {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .header__actions {
+    width: 100%;
+  }
+
+  .header__btn {
+    width: 100%;
+    max-width: 340px;
+  }
+}
