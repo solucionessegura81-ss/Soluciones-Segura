@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.solucionesseguracr.com/sitemap.xml
+Sitemap: https://solucionesseguracr.com/sitemap.xml
