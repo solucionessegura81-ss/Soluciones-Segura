@@ -3449,3 +3449,18 @@ html, body {
     max-width: 330px;
   }
 }
+
+/* ===== HEADER BOTONES EN UNA LINEA PC ===== */
+@media (min-width: 769px) {
+  .header__actions {
+    max-width: 1200px;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .header__btn {
+    white-space: nowrap;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}
