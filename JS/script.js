@@ -292,3 +292,33 @@ window.addEventListener("load", () => {
   }
 
 });
+
+// ===== Ordenar productos por precio: menor a mayor =====
+document.addEventListener("DOMContentLoaded", () => {
+  const grids = document.querySelectorAll(".productos-grid");
+  if (!grids.length) return;
+
+  const getPriceValue = (card) => {
+    const priceElement = card.querySelector(".producto-card__precio");
+    if (!priceElement) return Number.MAX_SAFE_INTEGER;
+
+    const text = priceElement.textContent.trim();
+
+    // Si dice "Consultar precio", lo manda al final
+    if (/consultar/i.test(text)) return Number.MAX_SAFE_INTEGER;
+
+    // Toma el primer precio encontrado, útil para rangos como ₡39.800 - ₡45.500
+    const match = text.match(/[\d.]+/);
+    if (!match) return Number.MAX_SAFE_INTEGER;
+
+    return Number(match[0].replace(/\./g, ""));
+  };
+
+  grids.forEach((grid) => {
+    const cards = Array.from(grid.querySelectorAll(".producto-card"));
+
+    cards
+      .sort((a, b) => getPriceValue(a) - getPriceValue(b))
+      .forEach((card) => grid.appendChild(card));
+  });
+});
