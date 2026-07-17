@@ -510,6 +510,14 @@ footer {
     0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
+/* Solo PC: mantiene el titulo en una sola linea */
+@media (min-width: 769px) {
+  .header h1 {
+    white-space: nowrap;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .header h1 {
     font-size: 2.2rem;
