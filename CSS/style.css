@@ -3531,3 +3531,12 @@ html, body {
     background-repeat: no-repeat !important;
   }
 }
+
+@media (max-width: 768px) {
+  .header.header--about {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    overflow: hidden;
+  }
+}
