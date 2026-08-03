@@ -3523,3 +3523,11 @@ html, body {
     background-repeat: no-repeat;
   }
 }
+
+@media (max-width: 768px) {
+  .quienes-somos {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+}
