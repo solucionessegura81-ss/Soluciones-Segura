@@ -3515,3 +3515,11 @@ html, body {
     font-size: clamp(2rem, 9vw, 2.5rem);
   }
 }
+
+@media (max-width: 768px) {
+  .quienes-somos {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
