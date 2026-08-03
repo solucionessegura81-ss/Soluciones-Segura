@@ -3517,25 +3517,19 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .quienes-somos {
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
-
-@media (max-width: 768px) {
-  .quienes-somos {
+  .header.header--about {
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+    overflow: hidden;
   }
 }
 
 @media (max-width: 768px) {
   .header.header--about {
-    background-position: center center !important;
+    background-image: url("../IMG/fondo1-mobile.jpg") !important;
     background-size: cover !important;
+    background-position: 58% center !important;
     background-repeat: no-repeat !important;
     overflow: hidden;
   }
