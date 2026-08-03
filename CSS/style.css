@@ -3516,21 +3516,18 @@ html, body {
   }
 }
 
+/* ===== FIX DEFINITIVO QUIENES SOMOS MOVIL ===== */
 @media (max-width: 768px) {
   .header.header--about {
-    background-position: center center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    overflow: hidden;
-  }
-}
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
 
-@media (max-width: 768px) {
-  .header.header--about {
     background-image: url("../IMG/fondo1-mobile.jpg") !important;
-    background-size: cover !important;
-    background-position: 58% center !important;
+    background-size: 115% 100% !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
-    overflow: hidden;
+    background-color: #0a1f44 !important;
   }
 }
