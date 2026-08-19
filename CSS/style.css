@@ -3142,6 +3142,13 @@ html, body {
   color: #25D366;
 }
 
+.producto-tech-card__icon {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
 .producto-tech-card span {
   font-weight: 900;
   font-size: 1.05rem;
@@ -3187,6 +3194,11 @@ html, body {
     font-size: 2rem;
   }
 
+.producto-tech-card__icon {
+  width: 46px;
+  height: 46px;
+}
+  
   .producto-tech-card span {
     font-size: 0.98rem;
   }
