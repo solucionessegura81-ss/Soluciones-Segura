@@ -3545,3 +3545,21 @@ html, body {
     background-color: #0a1f44 !important;
   }
 }
+
+/* ===== FIRMA TECNICO ===== */
+.tecnico-firma {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(31, 60, 136, 0.08);
+  color: #0a1f44;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .tecnico-firma {
+    max-width: 92%;
+    line-height: 1.45;
+  }
+}
