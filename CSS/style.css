@@ -3132,7 +3132,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -3143,10 +3143,11 @@ html, body {
 }
 
 .producto-tech-card__icon {
-  width: 115px;
-  height: 72px;
+  width: 95px;
+  height: 60px;
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
 }
 
 .producto-tech-card span {
@@ -3167,11 +3168,10 @@ html, body {
 
 @media (max-width: 768px) {
   .productos-tech {
-     width: 96px;
-    height: 62px;
+    margin: 8px 16px 24px;
+    padding: 26px 16px;
   }
-}
-  
+
   .productos-tech h2 {
     font-size: 1.75rem;
   }
@@ -3188,18 +3188,19 @@ html, body {
 
   .producto-tech-card {
     min-height: 128px;
-    padding: 16px 14px;
+    padding: 18px 10px;
+    gap: 8px;
   }
 
   .producto-tech-card i {
     font-size: 2rem;
   }
 
-.producto-tech-card__icon {
-  width: 68px;
-  height: 68px;
-}
-  
+  .producto-tech-card__icon {
+    width: 78px;
+    height: 52px;
+  }
+
   .producto-tech-card span {
     font-size: 0.98rem;
   }
