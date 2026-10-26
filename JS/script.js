@@ -322,3 +322,42 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach((card) => grid.appendChild(card));
   });
 });
+
+(() => {
+  const enabled = true;
+
+  if (!enabled) return;
+
+  const addDecoration = () => {
+    const header = document.querySelector(".header");
+    if (!header || header.querySelector(".halloween-decor")) return;
+
+    const decoration = document.createElement("div");
+    decoration.className = "halloween-decor";
+    decoration.setAttribute("aria-hidden", "true");
+    decoration.innerHTML = `
+      <span class="halloween-web halloween-web--left"></span>
+      <span class="halloween-web halloween-web--right"></span>
+      <span class="halloween-spider-wrap">
+        <span class="halloween-spider-thread"></span>
+        <span class="halloween-spider">
+          <span class="halloween-spider__body"></span>
+          <span class="halloween-spider__leg halloween-spider__leg--left-1"></span>
+          <span class="halloween-spider__leg halloween-spider__leg--left-2"></span>
+          <span class="halloween-spider__leg halloween-spider__leg--left-3"></span>
+          <span class="halloween-spider__leg halloween-spider__leg--right-1"></span>
+          <span class="halloween-spider__leg halloween-spider__leg--right-2"></span>
+          <span class="halloween-spider__leg halloween-spider__leg--right-3"></span>
+        </span>
+      </span>
+    `;
+
+    header.append(decoration);
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addDecoration, { once: true });
+  } else {
+    addDecoration();
+  }
+})();
