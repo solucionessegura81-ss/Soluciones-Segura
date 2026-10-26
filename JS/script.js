@@ -323,6 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// DECORACION HALLOWEEN //
 (() => {
   const enabled = true;
 
@@ -336,10 +337,39 @@ document.addEventListener("DOMContentLoaded", () => {
     decoration.className = "halloween-decor";
     decoration.setAttribute("aria-hidden", "true");
     decoration.innerHTML = `
-      <span class="halloween-web halloween-web--left"></span>
-      <span class="halloween-web halloween-web--right"></span>
+      <span class="halloween-web halloween-web--left">
+        <svg viewBox="0 0 240 240" focusable="false">
+          <line x1="0" y1="0" x2="240" y2="0"></line>
+          <line x1="0" y1="0" x2="222" y2="92"></line>
+          <line x1="0" y1="0" x2="170" y2="170"></line>
+          <line x1="0" y1="0" x2="92" y2="222"></line>
+          <line x1="0" y1="0" x2="0" y2="240"></line>
+          <path d="M 46 0 Q 36 36 0 46"></path>
+          <path d="M 94 0 Q 74 74 0 94"></path>
+          <path d="M 144 0 Q 114 114 0 144"></path>
+          <path d="M 194 0 Q 154 154 0 194"></path>
+          <path d="M 238 0 Q 190 190 0 238"></path>
+        </svg>
+      </span>
+
+      <span class="halloween-web halloween-web--right">
+        <svg viewBox="0 0 240 240" focusable="false">
+          <line x1="0" y1="0" x2="240" y2="0"></line>
+          <line x1="0" y1="0" x2="222" y2="92"></line>
+          <line x1="0" y1="0" x2="170" y2="170"></line>
+          <line x1="0" y1="0" x2="92" y2="222"></line>
+          <line x1="0" y1="0" x2="0" y2="240"></line>
+          <path d="M 46 0 Q 36 36 0 46"></path>
+          <path d="M 94 0 Q 74 74 0 94"></path>
+          <path d="M 144 0 Q 114 114 0 144"></path>
+          <path d="M 194 0 Q 154 154 0 194"></path>
+          <path d="M 238 0 Q 190 190 0 238"></path>
+        </svg>
+      </span>
+
       <span class="halloween-spider-wrap">
         <span class="halloween-spider-thread"></span>
+
         <span class="halloween-spider">
           <span class="halloween-spider__body"></span>
           <span class="halloween-spider__leg halloween-spider__leg--left-1"></span>
