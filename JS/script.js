@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // DECORACION HALLOWEEN //
 (() => {
-  const enabled = true;
+  const enabled = false;
 
   if (!enabled) return;
 
