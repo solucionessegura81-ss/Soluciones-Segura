@@ -281,3 +281,43 @@
     animation: none;
   }
 }
+
+.promotions-topbar {
+  gap: 20px;
+}
+
+.promotions-topbar__banner {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 197, 0, 0.55);
+  border-radius: 14px;
+}
+
+.promotions-topbar__banner img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.black-friday-active .promotions-topbar__banner {
+  border-color: rgba(255, 197, 0, 0.85);
+}
+
+@media (max-width: 700px) {
+  .promotions-topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .promotions-topbar__banner img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .promotions-back {
+    align-self: flex-end;
+  }
+}
