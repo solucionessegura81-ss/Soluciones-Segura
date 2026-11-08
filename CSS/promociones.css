@@ -1,0 +1,283 @@
+.promotions-page {
+  min-height: 100vh;
+  margin: 0;
+  background: #f1f3f5;
+  color: #0a1f44;
+}
+
+.promotions-topbar,
+.promotions-page main,
+.promotions-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.promotions-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px clamp(18px, 4vw, 72px);
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.promotions-brand img {
+  display: block;
+  width: min(260px, 52vw);
+  height: auto;
+}
+
+.promotions-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #0a1f44;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.promotions-hero {
+  max-width: 1180px;
+  margin: 34px auto 20px;
+  padding: clamp(36px, 6vw, 78px) clamp(22px, 5vw, 68px);
+  border-radius: 28px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #eaf0fa);
+  box-shadow: 0 18px 45px rgba(10, 31, 68, 0.12);
+}
+
+.promotions-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 16px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: rgba(37, 211, 102, 0.15);
+  color: #0a1f44;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.promotions-hero h1 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+.promotions-hero p:last-child {
+  max-width: 720px;
+  margin: 20px auto 0;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.promotions-catalog {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 36px 24px 64px;
+}
+
+.promotions-catalog__heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.promotions-catalog__heading h2 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.promotions-catalog__heading p {
+  margin: 10px 0 0;
+  color: #4b5563;
+}
+
+.promotions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 26px);
+}
+
+.promotion-card {
+  display: block;
+  aspect-ratio: 9 / 14;
+  overflow: hidden;
+  border: 3px solid transparent;
+  border-radius: 20px;
+  background: #111827;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.promotion-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promotion-card:hover {
+  transform: translateY(-7px);
+  border-color: #25d366;
+  box-shadow: 0 22px 35px rgba(0, 0, 0, 0.25);
+}
+
+.promotion-card:focus-visible,
+.promotions-back:focus-visible {
+  outline: 4px solid #25d366;
+  outline-offset: 4px;
+}
+
+.promotions-footer {
+  padding: 26px 18px;
+  text-align: center;
+  background: #0a1f44;
+  color: #ffffff;
+}
+
+.promotions-footer p {
+  margin: 0;
+}
+
+.promotions-page.black-friday-active {
+  background:
+    radial-gradient(circle at 8% 20%, rgba(255, 197, 0, 0.16), transparent 30%),
+    radial-gradient(circle at 92% 72%, rgba(255, 255, 255, 0.08), transparent 26%),
+    #050505;
+  color: #ffffff;
+}
+
+.black-friday-active .promotions-topbar {
+  background: #090909;
+  border-bottom: 1px solid rgba(255, 197, 0, 0.45);
+}
+
+.black-friday-active .promotions-back {
+  background: #ffc500;
+  color: #111111;
+}
+
+.black-friday-active .promotions-hero {
+  border: 1px solid rgba(255, 197, 0, 0.7);
+  background:
+    linear-gradient(125deg, rgba(255, 197, 0, 0.16), transparent 42%),
+    linear-gradient(135deg, #171717, #050505);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.55);
+}
+
+.black-friday-active .promotions-eyebrow {
+  background: #ffc500;
+  color: #111111;
+}
+
+.black-friday-active .promotions-hero h1,
+.black-friday-active .promotions-catalog__heading h2 {
+  color: #ffc500;
+}
+
+.black-friday-active .promotions-catalog__heading p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.black-friday-active .promotion-card {
+  border-color: rgba(255, 197, 0, 0.5);
+}
+
+.black-friday-active .promotion-card:hover {
+  border-color: #ffffff;
+}
+
+.bf-decoration {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bf-decoration::before,
+.bf-decoration::after {
+  content: "BLACK FRIDAY";
+  position: absolute;
+  color: rgba(255, 197, 0, 0.08);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transform: rotate(-20deg);
+}
+
+.bf-decoration::before {
+  top: 12%;
+  left: -10%;
+}
+
+.bf-decoration::after {
+  right: -18%;
+  bottom: 8%;
+}
+
+.bf-particle {
+  position: absolute;
+  top: -50px;
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: var(--color);
+  box-shadow: 0 0 14px var(--color);
+  animation: bf-fall var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes bf-fall {
+  to {
+    transform: translate3d(var(--drift), 115vh, 0) rotate(360deg);
+  }
+}
+
+@media (max-width: 960px) {
+  .promotions-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .promotions-topbar {
+    padding: 14px 16px;
+  }
+
+  .promotions-back {
+    padding: 10px 13px;
+    font-size: 0.86rem;
+  }
+
+  .promotions-hero {
+    margin: 18px 16px;
+    border-radius: 22px;
+  }
+
+  .promotions-catalog {
+    padding: 26px 16px 46px;
+  }
+
+  .promotions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bf-particle {
+    animation: none;
+  }
+}
