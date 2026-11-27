@@ -1,12 +1,9 @@
 (() => {
-  const season = {
-    enabled: true,
-    theme: "black-friday"
-  };
+  const page = document.querySelector(".promotions-page");
 
-  if (!season.enabled || season.theme !== "black-friday") return;
+  if (!page || page.dataset.season !== "black-friday") return;
 
-  document.body.classList.add("black-friday-active");
+  page.classList.add("black-friday-active");
 
   const decoration = document.createElement("div");
   decoration.className = "bf-decoration";
@@ -26,8 +23,9 @@
       "--color",
       colors[Math.floor(Math.random() * colors.length)]
     );
+
     decoration.append(particle);
   }
 
-  document.body.prepend(decoration);
+  page.prepend(decoration);
 })();
