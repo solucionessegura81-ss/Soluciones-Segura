@@ -308,7 +308,7 @@
   }
 }
 
-//*** Zoom en los Productos **//
+/* Zoom en los productos */
 
 body.promotion-modal-open {
   overflow: hidden;
@@ -421,5 +421,210 @@ body.promotion-modal-open {
   .promotion-modal__whatsapp {
     width: 100%;
     max-width: 360px;
+  }
+}
+
+/* =========================
+   TEMA NAVIDEÑO
+   ========================= */
+
+.promotions-page.christmas-active {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(246, 201, 69, 0.18), transparent 24%),
+    radial-gradient(circle at 92% 62%, rgba(198, 40, 40, 0.22), transparent 30%),
+    linear-gradient(145deg, #062e21 0%, #0a4f35 48%, #123d2d 100%);
+  color: #fffaf0;
+}
+
+.christmas-active .promotions-topbar {
+  background: #073d29;
+  border-bottom: 2px solid rgba(246, 201, 69, 0.75);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+.christmas-active .promotions-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(246, 201, 69, 0.8);
+  background:
+    radial-gradient(circle at 10% 8%, rgba(246, 201, 69, 0.17), transparent 28%),
+    radial-gradient(circle at 90% 95%, rgba(198, 40, 40, 0.24), transparent 34%),
+    linear-gradient(135deg, #0d4b32, #092d22);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.42);
+}
+
+.christmas-active .promotions-hero::before {
+  content: "✦";
+  position: absolute;
+  top: -35px;
+  right: 5%;
+  color: rgba(246, 201, 69, 0.2);
+  font-size: clamp(9rem, 20vw, 18rem);
+  line-height: 1;
+  transform: rotate(18deg);
+}
+
+.christmas-active .promotions-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.christmas-active .promotions-eyebrow {
+  background: #c62828;
+  color: #ffffff;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.22);
+}
+
+.christmas-active .promotions-hero h1,
+.christmas-active .promotions-catalog__heading h2 {
+  color: #f6c945;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.3);
+}
+
+.christmas-active .promotions-hero > p:last-of-type,
+.christmas-active .promotions-catalog__heading p {
+  color: rgba(255, 250, 240, 0.88);
+}
+
+.christmas-active .promotions-back {
+  border: 1px solid rgba(246, 201, 69, 0.9);
+  background: #c62828;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
+}
+
+.christmas-active .promotions-back:hover {
+  background: #a91e27;
+  transform: translateY(-2px);
+}
+
+.christmas-active .promotion-card {
+  border-color: rgba(246, 201, 69, 0.72);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.28);
+}
+
+.christmas-active .promotion-card:hover {
+  border-color: #ffffff;
+  box-shadow: 0 22px 38px rgba(0, 0, 0, 0.45);
+}
+
+.christmas-active .promotions-footer {
+  border-top: 1px solid rgba(246, 201, 69, 0.55);
+  background: #062e21;
+}
+
+.christmas-active .promotion-modal__image {
+  border-color: #f6c945;
+}
+
+.christmas-active .promotion-modal__whatsapp {
+  background: #167244;
+}
+
+/* Capa decorativa detrás del contenido */
+.christmas-decoration {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.christmas-decoration::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 76px;
+  background:
+    radial-gradient(circle at 14px 27px, #f6c945 0 4px, transparent 5px) 0 0 / 58px 58px repeat-x,
+    radial-gradient(circle at 42px 42px, #c62828 0 5px, transparent 6px) 0 0 / 58px 58px repeat-x,
+    linear-gradient(180deg, #0b5b39 0 12px, transparent 12px);
+  filter: drop-shadow(0 0 7px rgba(246, 201, 69, 0.55));
+}
+
+.christmas-snowflake {
+  position: absolute;
+  top: -45px;
+  left: var(--x);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--size);
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  animation: christmas-snowfall var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.christmas-ornament {
+  position: absolute;
+  top: 14px;
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.82), transparent 13%),
+    var(--color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.36);
+  transform-origin: 50% -38px;
+  animation: christmas-ornament-swing 3.8s ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.christmas-ornament::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 1px;
+  height: 38px;
+  background: rgba(246, 201, 69, 0.72);
+}
+
+.christmas-ornament::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 11px;
+  height: 7px;
+  border-radius: 3px;
+  background: #f6c945;
+  transform: translateX(-50%);
+}
+
+@keyframes christmas-snowfall {
+  to {
+    transform: translate3d(var(--drift), 115vh, 0) rotate(360deg);
+  }
+}
+
+@keyframes christmas-ornament-swing {
+  from {
+    transform: rotate(-8deg);
+  }
+
+  to {
+    transform: rotate(8deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .christmas-decoration::before {
+    height: 58px;
+    transform: scaleY(0.8);
+    transform-origin: top;
+  }
+
+  .christmas-ornament:nth-child(n + 34) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .christmas-snowflake,
+  .christmas-ornament {
+    animation: none;
   }
 }
